@@ -1,0 +1,38 @@
+.Page
+{
+    min-height:300px;
+    width:80%;
+    border-top:1px solid rgb(186, 186, 186);
+    margin-left: auto;
+    margin-right: auto;
+}
+.Page h1
+{
+    text-align: center;
+    color:rgb(113, 113, 113)
+
+}
+.categoryShop
+{
+    width:100%;
+    min-height:100px;
+    padding:30px;
+    color:rgb(186, 186, 186);
+    display: flex;
+
+}
+
+.categoryElement:hover{
+    color:rgb(230, 82, 197);
+    text-decoration: none;
+
+}
+.categoryElement
+{
+    width:15%;
+    height:100%;
+    margin-left:30px;
+    cursor: pointer;
+    text-decoration: none;
+
+}

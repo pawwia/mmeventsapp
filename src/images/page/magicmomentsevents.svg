@@ -1,0 +1,15 @@
+<svg width="164.54mm" height="33.266mm" version="1.1" viewBox="0 0 164.54 33.266" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <filter id="filter31099-3" x="-.01996" y="-.11719" width="1.0399" height="1.2344" color-interpolation-filters="sRGB">
+   <feGaussianBlur in="SourceAlpha" result="blur" stdDeviation="1.3159239"/>
+   <feSpecularLighting lighting-color="#fbf1b8" in="blur" result="specular" specularExponent="25" surfaceScale="10">
+    <feDistantLight azimuth="235" elevation="45"/>
+   </feSpecularLighting>
+   <feComposite in="specular" in2="SourceGraphic" k2="1" k3="1" operator="arithmetic" result="composite1"/>
+   <feComposite in="composite1" in2="SourceAlpha" operator="in" result="composite2"/>
+  </filter>
+ </defs>
+ <g transform="translate(-21.828 -39.307)">
+  <text x="99.900383" y="59.635284" fill="#ff00ae" filter="url(#filter31099-3)" font-family="sans-serif" font-size="25.4px" stroke-linejoin="round" stroke-width=".165" style="line-height:0.85" xml:space="preserve"><tspan x="99.900383" y="59.635284" fill="#ff00ae" font-family="'Have Heart One'" font-size="25.4px" stroke-linejoin="round" stroke-width=".165" text-align="center" text-anchor="middle">Magic Moments Events</tspan></text>
+ </g>
+</svg>

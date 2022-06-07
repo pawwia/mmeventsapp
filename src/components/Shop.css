@@ -1,0 +1,20 @@
+.shopApp
+{
+    min-height:400px;
+    border-top:1px solid rgb(186, 186, 186);
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;;
+
+
+}
+.shopApp p{
+    text-align: center;
+    font-size:35px;
+}
+.shopApp:after {
+    content:'';
+    display:block;
+    clear:both;
+  }

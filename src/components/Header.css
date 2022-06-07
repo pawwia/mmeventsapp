@@ -1,0 +1,76 @@
+header
+{
+    width:100%;
+    display: flex;
+   min-height:120px;
+
+
+}
+.logoApp{
+padding:3%;
+flex-basis: 20%;
+display: block;
+text-align: center;
+vertical-align: middle;
+
+}
+.logoApp img {
+width:94%;
+vertical-align: middle;
+
+
+}
+
+
+.leftMenu
+{
+flex-basis: 50%;
+padding:3%;
+vertical-align: middle;
+
+
+}
+
+.leftMenu a
+{
+   display: inline-block;
+    background-color: transparent;
+    border:none;
+    text-decoration: none;
+    color:#8a8a8a;
+    width:30%;
+    height:100%;
+    margin: auto;
+    text-align: center;
+    padding-top:3%;
+
+}
+.leftMenu a:hover{
+    background-color: #ff01af;
+    color:#fff;
+   transition-duration: 1s;
+   cursor: pointer;
+   border-radius: 5px;
+}
+.rightMenu
+{
+flex-basis: 30%;
+padding: 3%;
+text-align: center;
+
+}
+.rightMenu button{
+
+    background-color: transparent;
+    border:none;
+    width:30%;
+    height:100%;
+    margin: auto;
+
+}
+.rightMenu button:hover{
+    background-color: #ff01af;
+    color:#fff;
+   transition-duration: 1s;
+   cursor: pointer;
+}
