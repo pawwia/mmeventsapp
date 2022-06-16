@@ -1,0 +1,34 @@
+.popupbooking {  
+    position: fixed;  
+    width: 100%;  
+    height: 100%;  
+    top: 0;  
+    left: 0;  
+    right: 0;  
+    bottom: 0;  
+    margin: auto;  
+    background-color: transparent;  
+  }  
+  .popupbooking_open {  
+    position: absolute;  
+    left:5%;  
+    right: 5%;  
+    top: 5%;  
+    bottom: 5%;  
+    margin: auto;  
+    border-radius: 15px;  
+    background:linear-gradient(0deg, rgba(251,101,204,1) 0%, rgba(255,1,175,1) 40%, rgba(181,1,124,1) 100%);
+    overflow:auto;  
+  }
+.bookingName{
+text-align: center;
+color:#fff;
+font-size:18px;
+
+  }
+
+  .booking{
+color:#fff;
+width:100%;
+min-height:80%;
+  }

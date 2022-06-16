@@ -1,7 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
+  import LoginButton from './LoginButton';
 import './Header.css';
 import Logo from '../images/page/magicmomentsevents.svg'
-const Header = () => {
+const Header = (props) => {
+    const [loginActive,setLoginActive]=useState(0);
+
+const toggleLoginButton=()=>
+{
+setLoginActive(!loginActive);
+
+}
+const handleAccount=()=>{
+    return null;
+}
+
     return (
         <header>
 <div className="logoApp"><img src={Logo} alt="logo"/></div>
@@ -9,14 +27,14 @@ const Header = () => {
     
 
 <a href="https://mmevents.pl">Powrót na stronę</a>
-<a href="/products">Produkty</a>
-<a href="/avability">Dostępność terminu</a>
+<Link to="/products">Produkty</Link>
+<Link to="/avability">Dostępność terminu</Link>
 
 
 </div>
-<div className='rightMenu'><button>Zaloguj się</button></div>
+<div className='rightMenu'>{!props.isLogged?<button onClick={toggleLoginButton}>Zaloguj się</button>:              <Link to="/MyAccount">Moje konto</Link>}</div>
 
-
+{loginActive?<LoginButton logData={props.setLogData} logged={props.setIsLogged} close={toggleLoginButton}/>:null}
         </header>
 
      );

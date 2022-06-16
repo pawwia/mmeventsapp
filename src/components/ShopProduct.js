@@ -23,12 +23,16 @@ const togglePopup=()=>
    {showPopup ?  
     <Popup  
       tittle={props.name}
+
       text='X'  
       closePopup={togglePopup}  
       name={props.name}
       price={props.price}
       img={props.img}
       hours={props.hours}
+      guestBook={props.guestBook}
+      carpet={props.carpet}
+      km={props.km}
     />  
     : null  
     }  </>

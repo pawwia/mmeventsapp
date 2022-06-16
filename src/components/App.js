@@ -1,4 +1,4 @@
-import React, {Suspense, lazy, useState} from 'react';
+import React, {Suspense, lazy, useState, useEffect} from 'react';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import './App.css';
 import Loader from './Loader';
@@ -6,6 +6,8 @@ import MagicMirror from './MagicMirror';
 
 
 const Header = lazy(() => {
+ 
+
   return new Promise(resolve => {
     setTimeout(() => resolve(import("./Header")), 100);
   });
@@ -17,28 +19,51 @@ const Footer = lazy(() => {
 });
 const Page = lazy(() => {
   return new Promise(resolve => {
-    setTimeout(() => resolve(import("./Page")), 100);
+    setTimeout(() => resolve(import("./Page")), 500);
   });
 });
 const Avability = lazy(() => {
   return new Promise(resolve => {
-    setTimeout(() => resolve(import("./Avability")), 100);
+    setTimeout(() => resolve(import("./Avability")), 500);
   });
 });
 const Shop = lazy(() => {
   return new Promise(resolve => {
-    setTimeout(() => resolve(import("./Shop")), 100);
+    setTimeout(() => resolve(import("./Shop")), 500);
   });
 });
 
+const MyAccount = lazy(() => {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(import("./MyAccount")), 500);
+  });
+});
+
+
+
 function App() {
-  
+  const [isLogged, setIsLogged]=useState(null);
+  const [logData, setLogData]=useState(null);
+  console.log(isLogged);
+  useEffect(()=>{
+
+    return null;
+
+
+
+    },[]);
 
   return (
   
     <Suspense fallback={<Loader/>}>
-    <Header/>
+    
     <BrowserRouter>
+    <Header
+    isLogged={isLogged}
+    setIsLogged={setIsLogged}
+    logData={logData}
+    setLogData={setLogData}
+    />
     <Routes>
     <Route path='products/fotolustro' element={<Shop text={"Fotolustro"}  />}/>
 
@@ -46,10 +71,12 @@ function App() {
       <Route path='avability' element={<Avability/>}/>
       <Route path='/' element={<Page/>}/>
       <Route path='/products/magicmirror' element={<MagicMirror />}/>
+      <Route path='/MyAccount' element={<MyAccount isLogged={isLogged} data={logData}/>}/>
 
     </Routes>
-    </BrowserRouter>
     <Footer/>
+
+    </BrowserRouter>
     
     
     </Suspense>
