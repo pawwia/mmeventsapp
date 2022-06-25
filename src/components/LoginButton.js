@@ -29,6 +29,7 @@ const [error,setError]=useState(null);
 const [waiter,setWaiter]=useState(false);
 
 const [password,setPassword]=useState('');
+
 const handleLogin=async()=>{
 
     setWaiter(true);
@@ -46,7 +47,9 @@ setError(respuestajson.error);
 setWaiter(false);
 if (respuestajson.connected){
 props.logData(respuestajson);
-props.logged(respuestajson.email);
+props.logged(respuestajson.id);
+window.localStorage.setItem('id', respuestajson.id );
+
 props.close();
 }
    
