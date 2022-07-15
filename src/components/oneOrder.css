@@ -1,0 +1,118 @@
+.popup {  
+    position: fixed;  
+    width: 100%;  
+    height: 100%;  
+    top: 0;  
+    left: 0;  
+    right: 0;  
+    bottom: 0;  
+    margin: auto;  
+    background-color: rgba(0,0,0, 0.5);  
+  }  
+  .popup_open {  
+    position: absolute;  
+    left: 10%;  
+    right: 10%;  
+    top: 5%;  
+    bottom: 5%;  
+    margin: auto;  
+    border-radius: 15px;  
+    background: white;
+    overflow:auto;  
+    color: rgba(0,0,0, 0.5);  
+    text-align: left;;
+
+  }
+
+  .TitleBar
+  {
+width:100%;
+height:50px;
+border:black 1px solid;
+content:'';
+  display:block;
+  clear:both;
+  color:rgb(76, 76, 76);
+  }
+  .Title{
+width:95%;
+display:block;
+float: left;
+font-weight: bold;
+    font-size:20px;
+    text-align: center;
+   
+  }
+  .Title
+  {
+    vertical-align: -webkit-baseline-middle;
+    padding-top:15px;
+  }
+  
+  .Close{
+width:5%;
+height:100%;
+display:block;
+float:left;
+font-size:30px;
+  }
+
+  .Close span{
+    width:40px;
+    height:40px;
+    margin-left: auto;
+    margin-right: auto;
+vertical-align: -webkit-baseline-middle;
+cursor: pointer;
+  }
+
+  .contentBar
+  {
+      padding:50px;
+  }
+  .TitleorderInfo{
+font-size:30px!important; 
+font-weight: bold;
+color:#ff01af
+
+  }
+  .orderinfoElement{
+color:rgb(0, 0, 0);
+border-bottom:solid 1px rgb(78,78,78);
+padding:10px;
+margin-bottom:15px;
+width:100%
+  }
+  .orderinfoElement span{
+      width:30%;
+      display: inline-block;
+      margin-right: 3%;
+text-align: center;
+cursor:default
+}
+
+.orderinfoElement span:first-child{
+    color:rgb(95, 95, 95);
+
+    
+    }
+
+    .orderinfoElement span:last-child{
+        color:rgb(89, 190, 0);
+    
+        
+        }
+        .orderinfoElement span:nth-child(2){
+            font-weight: bold;
+        
+            
+            }
+            .orderinfoElement span:last-child button 
+ {
+background-color: transparent;
+border:none;
+color:rgb(89, 190, 0);
+cursor: pointer;
+
+
+            }

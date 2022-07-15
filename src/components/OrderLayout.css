@@ -1,0 +1,23 @@
+.typeofLayout{
+    display:inline-block;
+    width:48%;
+    min-height:50px;
+    background-color: #ff01af;
+    text-align: center !important;
+    font-size: 30px !important;
+    vertical-align: middle;
+   margin-right: 5px;
+    border-radius: 10px !important;
+    color:#fff;
+    padding:10px 0 0 10px;
+    cursor:pointer;
+    
+}
+.typeofLayout:hover{
+    background-color: #fff;
+    color:#ff01af;
+    transition: 1s;
+    border:2px #ff01af solid;
+
+
+}

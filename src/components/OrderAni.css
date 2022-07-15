@@ -1,0 +1,80 @@
+
+.bgButtons
+{
+display:inline-block;
+text-align: center;
+}
+.bgButtons button
+{
+    background-color: transparent;
+    border:none;
+    color:#ff01af;
+    border-bottom: #ff01af 3px solid; 
+    margin-right:10px;
+    font-size:20px;
+
+
+}
+.bgButtons button:hover
+{
+    background-color: transparent;
+    border:none;
+    border-bottom: rgb(113, 113, 113) 2px solid; 
+    cursor: pointer;
+    color:rgb(113, 113, 113)
+
+}
+.buttonsAll{
+   margin-top:10%;
+    margin-left: 10%;
+    
+}
+
+.actualUpdate{
+    width:100%;
+    padding-top:30px;
+
+
+}
+.actualUpdate span{
+width:49%;
+height:30px;
+font-size:25px;
+display:inline-block;
+}
+.actualUpdate span:last-child
+{
+    border:#ff01af 3px solid;
+    color:#ff01af;
+    border-radius:10px;
+    text-align:center;
+    padding:20px 0px 20px 0px;
+
+}
+
+.actualUpdate span:last-child:hover{
+
+    color:#fff;
+    background-color: #ff01af;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.showBgInfo{
+
+}
+.showAniImg{
+
+    width:100%;
+    height:300px;
+}
+
+
+
+.bgimage
+{
+    width:100%;
+    height:100%;
+   display: block;
+
+}

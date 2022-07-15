@@ -45,14 +45,15 @@ function App() {
   const [isLogged, setIsLogged]=useState(null);
   const [logData, setLogData]=useState(null);
   console.log(isLogged);
+
   useEffect(()=>{
+    if(window.localStorage.getItem('id') )
+    {
+      setIsLogged(window.localStorage.getItem('id') )
+    }
 
-    return null;
 
-
-
-    },[]);
-
+  },[])
   return (
   
     <Suspense fallback={<Loader/>}>
@@ -71,7 +72,7 @@ function App() {
       <Route path='avability' element={<Avability/>}/>
       <Route path='/' element={<Page/>}/>
       <Route path='/products/magicmirror' element={<MagicMirror />}/>
-      <Route path='/MyAccount' element={<MyAccount isLogged={isLogged} data={logData}/>}/>
+      <Route path='/MyAccount' element={<MyAccount setIsLogged={setIsLogged} isLogged={isLogged} data={logData}/>}/>
 
     </Routes>
     <Footer/>

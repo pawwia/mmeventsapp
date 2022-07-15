@@ -52,6 +52,9 @@ setShowReservation(!showReservation);
          hours={props.hours}
         guestBook={props.guestBook}
         km={props.km}
+        priceKm={props.priceKm}
+        gbPriceNormal={props.guestBook?0:props.gbPriceNormal}
+        gbPriceIndywidual={props.guestBook?props.gbPriceIndywidua/2:props.gbPriceIndywidual}
         />:null}
 
         </div>  

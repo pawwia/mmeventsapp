@@ -1,14 +1,12 @@
 import React, {useState} from 'react';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
+import {  
     Link
   } from "react-router-dom";
   import LoginButton from './LoginButton';
 import './Header.css';
 import Logo from '../images/page/magicmomentsevents.svg'
 const Header = (props) => {
+  
     const [loginActive,setLoginActive]=useState(0);
 
 const toggleLoginButton=()=>
