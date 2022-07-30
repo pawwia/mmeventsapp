@@ -50,11 +50,15 @@ setShowReservation(!showReservation);
         name={props.name}
         price={props.price}
          hours={props.hours}
+         morekm={props.morekm} 
+         gbPriceIndywidual={props.guestBook?props.gbPriceIndywidual/2:props.gbPriceIndywidual}
+         gbPriceNormal={props.guestBook?0:props.gbPriceNormal}
         guestBook={props.guestBook}
         km={props.km}
         priceKm={props.priceKm}
-        gbPriceNormal={props.guestBook?0:props.gbPriceNormal}
-        gbPriceIndywidual={props.guestBook?props.gbPriceIndywidua/2:props.gbPriceIndywidual}
+     
+        isLogged={props.isLogged}
+ setIsLogged={props.setIsLogged}
         />:null}
 
         </div>  

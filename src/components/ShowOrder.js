@@ -20,7 +20,7 @@ const ShowOrder = (props) => {
             case 4:statusDec="oczekująca";break;
             case 5:statusDec="Wykonana";break;
             case 0:statusDec="Z";break;
-
+default:statusDec="Z";break;
 
         }
         let DurationHour

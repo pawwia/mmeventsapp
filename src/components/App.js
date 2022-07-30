@@ -66,12 +66,12 @@ function App() {
     setLogData={setLogData}
     />
     <Routes>
-    <Route path='products/fotolustro' element={<Shop text={"Fotolustro"}  />}/>
+    <Route path='products/fotolustro' element={<Shop isLogged={isLogged} setIsLogged={setIsLogged} text={"Fotolustro"}  />}/>
 
     <Route path='products' element={<Page/>}/>
       <Route path='avability' element={<Avability/>}/>
       <Route path='/' element={<Page/>}/>
-      <Route path='/products/magicmirror' element={<MagicMirror />}/>
+      <Route path='/products/magicmirror' element={<MagicMirror  />}/>
       <Route path='/MyAccount' element={<MyAccount setIsLogged={setIsLogged} isLogged={isLogged} data={logData}/>}/>
 
     </Routes>

@@ -25,14 +25,19 @@ const togglePopup=()=>
       tittle={props.name}
 
       text='X'  
-      closePopup={togglePopup}  
+      closePopup={togglePopup} 
+      morekm={props.morekm} 
       name={props.name}
       price={props.price}
       img={props.img}
       hours={props.hours}
       guestBook={props.guestBook}
+      gbPriceIndywidual={props.gbPriceIndywidual}
+      gbPriceNormal={props.gbPriceNormal}
       carpet={props.carpet}
       km={props.km}
+      isLogged={props.isLogged}
+ setIsLogged={props.setIsLogged}
     />  
     : null  
     }  </>

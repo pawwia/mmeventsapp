@@ -223,3 +223,152 @@ width:30%;
       bottom: 100%;
     }
   }
+
+  .inputbooking{
+
+    background-color: transparent;
+    border: 4px solid white;
+    border-radius: 5px;
+    width:50%;
+    min-height:40px;
+    font-size:23px;
+    padding:15px;
+    color:white;
+  }
+  .inputbooking ::placeholder{
+
+    color:rgb(255, 167, 230)
+  }
+
+  
+
+  .inputbooking:focus{
+    border: 4px solid rgb(255, 231, 231);
+
+
+  }
+
+  .inputbookingbutton{
+
+    display: block;
+    background-color: transparent;
+    border: 4px solid white;
+    border-radius: 5px;
+    width:50%;
+    min-height:40px;
+    font-size:23px;
+    padding:15px;
+    color:white;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top:33px;
+  }
+  .inputbookingbutton:hover{
+    cursor:pointer;
+background-color: #fff;
+color:rgba(255, 1, 175,.75);
+
+
+  }
+  .validationOk{
+
+    color:green;
+   
+font-size:16px !important;
+text-align: left !important;
+margin-left: 22%;
+margin-top:0;
+margin-bottom: 0;
+
+  }
+
+  .ValidationNotOk{
+color:rgb(163, 0, 0);
+font-size:16px !important;
+text-align: left !important;
+margin-left: 22%;
+margin-top:0;
+margin-bottom: 0;
+
+  }
+  .ValidationRes{
+
+    border-radius: 10px;
+    
+   
+  }
+
+  .reginput span{
+width:40%;
+min-height:50px;
+display:inline-block;
+  }
+  .reginput span:last-child{
+    width:20%;
+  }
+  .reginput{
+    border-bottom: 2px #fff solid;
+    margin-top:20px;
+    padding-top:2%;
+
+
+  }
+  .reginput input{
+
+    padding: 10px;
+    display: block;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    color: #fff;
+    font-size: 15px;
+  }
+ .reginput select{ padding: 10px;
+  display: block;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  color: #fff;
+  font-size: 15px;
+ }
+ .reginput select option {
+  color:black
+ }
+
+ .checkregulamin{
+
+display: inline-block !important;
+ }
+ .gbopis{
+  font-size:10px !important;
+  color:#e8e8e8
+ }
+ .gbtake:hover{
+background-color: #fff;
+cursor:pointer;
+color:rgba(255, 1, 175,.75)
+
+ }
+ .gbtake:hover p{
+  color:rgba(255, 1, 175,.75)
+
+ }
+
+ .reviewprice{
+padding:10px;
+  border-bottom: rgba(255, 255, 255,.75) 2px solid;
+ }
+ .reviewprice span{
+min-height:30px;
+width:33%;
+display:inline-block; 
+}
+.reviewprice :first{
+  margin-top:200px;;
+}
