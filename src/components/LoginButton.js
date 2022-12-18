@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './LoginButton.css'
+import RecoverPassword from './RecoverPassword';
 
 const urlLogin='http://localhost/db/login.php';
 const enviarData=async(url,data)=>{
@@ -27,8 +28,15 @@ const LoginButton = (props) => {
 const [login,setLogin]=useState('');
 const [error,setError]=useState(null);
 const [waiter,setWaiter]=useState(false);
+const [popupRemindPassword, setPopupRemindPassword]=useState(0);
+
 
 const [password,setPassword]=useState('');
+
+const togglePopupRemindPassword=()=>{
+
+    setPopupRemindPassword(!popupRemindPassword)
+}
 
 const handleLogin=async()=>{
 
@@ -68,8 +76,8 @@ props.close();
 <input type="password" className='loginInput' placeholder='Hasło' onChange={(e)=>{setPassword(e.target.value)}} value={password}/>
 {error?<div class="error">{error}</div>:null}
 <button className='loginInput loginButton' onClick={handleLogin}>Zaloguj</button>
-<div className='remindPassword'>Nie pamiętasz Hasła? Kliknij tutaj aby je przypomnieć</div>
-
+<div className='remindPassword'><a onClick={togglePopupRemindPassword}>Nie pamiętasz Hasła? Kliknij tutaj aby je przypomnieć</a></div>
+{popupRemindPassword?<RecoverPassword close={togglePopupRemindPassword}/>:null}
 
 
               </div>

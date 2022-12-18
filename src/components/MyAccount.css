@@ -37,3 +37,8 @@ width:100%; padding:20px;
     display:block;
     clear:both;
   }
+  @media (max-width: 750px) {
+
+  .MyAccountPage
+  {padding:0;}
+  }

@@ -81,13 +81,24 @@ else alert("nastąpił błąd. Skontaktuj się z administratorem.")  }
           <span className='Close'><span onClick={props.close}>X</span></span>
           </div>
           <div className='contentBar'>
+          {allBg?
+<div className='buttonsAll'>
+   {showNumber>1?<div className='bgButtons'> <button onClick={()=>{setShowNumber(showNumber-1)}}>Cofnij</button></div>:null}
+{allBg.map(result=>
+    <div className='bgButtons'><button onClick={()=>{setShowNumber(result.id)}}>{result.name}</button></div>
+    )}
+   {showNumber<allBg.length?<div className='bgButtons'> <button onClick={()=>{setShowNumber(showNumber+1)}}>Dalej</button></div>:null}
+
+    </div>
+
+:null
+          }
               {allBg?
-              <div>
+              <div className='animations'>
                   <div className='showAniImg'>
                   {Parser(allBg[showNumber-1].url)}
 
                   </div>
-
                  <div className='actualUpdate'>
                      <div className='showBgInfo'>
 Ta animacja: {allBg[showNumber-1].name}
@@ -108,18 +119,7 @@ Aktualnie wybrana animacja: {tempBg}
                   </div>
               
               :null}
-          {allBg?
-<div className='buttonsAll'>
-   {showNumber>1?<div className='bgButtons'> <button onClick={()=>{setShowNumber(showNumber-1)}}>Cofnij</button></div>:null}
-{allBg.map(result=>
-    <div className='bgButtons'><button onClick={()=>{setShowNumber(result.id)}}>{result.name}</button></div>
-    )}
-   {showNumber<allBg.length?<div className='bgButtons'> <button onClick={()=>{setShowNumber(showNumber+1)}}>Dalej</button></div>:null}
-
-    </div>
-
-:null
-          }
+      
       </div>
       </div>
         </div> 

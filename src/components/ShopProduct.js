@@ -16,9 +16,9 @@ const togglePopup=()=>
 
     return (<>
         <div onClick={togglePopup} className="ProductElement">
-        <img src={Image} alt={props.name} />
+        <img src={Image} loading="lazy" unselectable="on" alt={props.name} />
         <div className='NameElement'>{props.name}</div>
-        <div className='PriceElement'>{props.price} zł</div>
+        <div className='PriceElement'>od {props.price} zł</div>
     </div>
    {showPopup ?  
     <Popup  
@@ -29,6 +29,7 @@ const togglePopup=()=>
       morekm={props.morekm} 
       name={props.name}
       price={props.price}
+      priceNY={props.priceNY}
       img={props.img}
       hours={props.hours}
       guestBook={props.guestBook}

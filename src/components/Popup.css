@@ -66,3 +66,18 @@ cursor: pointer;
   {
       padding:50px;
   }
+.introduce span
+{
+  display:block;
+  margin: 13px;
+  color:red;
+  font-weight: bold;
+}
+  @media (max-width: 750px) {
+    .popup_open{
+      top:0;
+      bottom:0;
+      left:0;
+      right:0;
+    } 
+  }

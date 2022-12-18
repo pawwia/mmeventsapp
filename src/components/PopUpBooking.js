@@ -1,9 +1,13 @@
 import { option } from 'lightbox2';
 import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 import { scryRenderedDOMComponentsWithTag } from 'react-dom/test-utils';
 import './PopUpBooking.css';
+import { domToReact } from 'html-react-parser';
 
 
+const d=new Date(); 
+let NextYear=d.getFullYear()+1;
 
 const urlAvability='http://localhost/db/checkAvability.php';
 const getAvable=async(url,data)=>{
@@ -86,7 +90,7 @@ const [dateToCheck,setDateToCheck]=useState(Today);
 
 const [stepForm,setStepForm]=useState(1);
 
-const [orderPrice,setOrderPrice]=useState(props.price);
+const [orderPrice,setOrderPrice]=useState(0);
 const [orderDuration,setOrderDuration]=useState(props.hours);
 const [orderKmAdd,setOrderKmAdd]=useState(null);
 const [orderGbAdd,setOrderGbAdd]=useState(null);
@@ -484,9 +488,9 @@ setOrderMias(result)
 
 const takeGb=(option)=>{
     setOrderGuestBookType(option);
-if (option===0) {setOrderGbAdd(0);setFinalPrice(orderPrice+orderKmAdd);}
-else if (option===1) {setOrderGbAdd(props.gbPriceNormal);setFinalPrice(orderPrice+props.gbPriceNormal+orderKmAdd);}
-else if (option===2) {setOrderGbAdd(props.gbPriceIndywidual);setFinalPrice(orderPrice+props.gbPriceIndywidual+orderKmAdd);}
+if (option===0) {setOrderGbAdd(0);setFinalPrice(Math.round(orderPrice+orderKmAdd));}
+else if (option===1) {setOrderGbAdd(props.gbPriceNormal);setFinalPrice(Math.round(orderPrice+props.gbPriceNormal+orderKmAdd));}
+else if (option===2) {setOrderGbAdd(props.gbPriceIndywidual);setFinalPrice(Math.round(orderPrice+props.gbPriceIndywidual+orderKmAdd));}
 
 }
 
@@ -540,6 +544,7 @@ if (result.avable)
         }
 else {
     setErrorText(null);
+    dateToCheck.toString().substring(0,4)===NextYear.toString()?setOrderPrice(props.priceNY):setOrderPrice(props.price)
     setLoading(0);
     setStepForm(2);
 }
@@ -581,6 +586,9 @@ else {
 
 </div>:null}
 {stepForm===2?<div>
+    
+
+
 
     <div className='avability login-box'>
 
@@ -761,7 +769,7 @@ getDataofLoggedUser()
     <div className='reviewprice'>
 <span>Dojazd (poza pakietem)</span>
 <span></span>
-<span>{orderKmAdd} zł</span>
+<span>{Math.round(orderKmAdd)} zł</span>
     </div>
 
     <div className='reviewprice'>
@@ -778,6 +786,7 @@ getDataofLoggedUser()
     <p className="gbopis">Rezerwując oświadczam, że zapoznałem/ zapoznałam się z regulaminem serwisu, polityką prywatności oraz akceptuję regulamin usługi. </p>
     
 {loading?"Proszę czekać. Trwa wysyłanie danych":null}
+<button className='inputbookingbutton' onClick={()=>setStepForm(4)} >Zmień dane rezerwacji</button>
     {btnActive?<button className='inputbookingbutton' onClick={Bookthis} >Rezerwuję</button>:<button className='inputbookingbutton'>Rezerwuję</button>}
 </div>
 
@@ -786,6 +795,8 @@ getDataofLoggedUser()
 
     <div className='avability login-box'>
         {message?message:null}
+        <Link className='inputbookingbutton' to="/MyAccount">Przejdź do profilu2</Link>
+
 </div>
 </div>:null}
 {stepForm===9?<div>9</div>:null}

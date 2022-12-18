@@ -3,102 +3,86 @@ import MagicMirror from './MagicMirror';
 
 import './Shop.css';
 import ShopProduct from './ShopProduct';
+const urlGetFotolustro='http://localhost/db/getFotolustro.php';
+const getData=async(url,data)=>{
+
+const resp=await fetch(url,{
+method:'POST',
+body:JSON.stringify(data),
+headers:{
+  'Content-Type': 'application/json'
+}     });
+
+  const json = await resp.json();
+    return json;
+}
+
+
 const Shop = (props) => {
+ 
+ 
+
+
 
 const [showDescription, setShowDescription]=useState(0);
 const [showConfiguration, setShowConfiguration]=useState(0);
-const [showProducts, setShowProducts]=useState(1); 
+const [showProducts, setShowProducts]=useState(1);
+const [dataFotolustro, setDataFotolustro]=useState(null); 
+
+
+
+useEffect(() => {
+    const data={
+        data:0,
+    };
+    const getFotolustro=  getData(urlGetFotolustro,data)
+    if(getFotolustro)
+    {
+        getFotolustro.then((result)=>{
+            if (result)
+            
+            {   
+setDataFotolustro(result);
+
+                            }
+            else 
+            {
+          return null;
+            }
+        })}
+
+  },[]);
 
     return (
         <div className='shopApp'>
 <p>{props.text}</p>
 
+{
+dataFotolustro?dataFotolustro.map((element)=>
 
 <ShopProduct
-name="Fotolustro - 1h"
-img="fotolustro.jpg"
-price={600}
-hours={1}
-morekm={2.50}
-gbPriceIndywidual={100}
-gbPriceNormal={50}
-guestBook={false}
+key={element.id}
+name={element.name}
+img={element.img}
+price={element.priceTy}
+priceNY={element.priceNY}
+hours={element.hours}
+morekm={element.priceKm}
+gbPriceIndywidual={element.gbPriceIndywidual}
+gbPriceNormal={element.gbPriceNormal}
+guestBook={element.guestBook}
 carpet={false}
-km={1}
+km={element.km}
 isLogged={props.isLogged}
  setIsLogged={props.setIsLogged}
 
 />
-<ShopProduct
-name="Fotolustro - 2h"
-img="fotolustro.jpg"
-price={800}
-hours={2}
-morekm={2.50}
-gbPriceIndywidual={100}
-gbPriceNormal={50}
-guestBook={false}
-carpet={false}
-km={30}
-isLogged={props.isLogged}
- setIsLogged={props.setIsLogged}
-/>
-<ShopProduct
-name="Fotolustro - 3h"
-img="fotolustro.jpg"
-price={1000}
-hours={3}
-morekm={2.50}
-gbPriceIndywidual={100}
-gbPriceNormal={50}
-guestBook={false}
-carpet={false}
-km={50}
-isLogged={props.isLogged}
- setIsLogged={props.setIsLogged}
-/>
-<ShopProduct
-name="Fotolustro - 4h"
-img="fotolustro.jpg"
-price={1200}
-hours={4}
-gbPriceIndywidual={100}
-gbPriceNormal={50}
-morekm={2.50}
-guestBook={true}
-carpet={false}
-km={80}
-isLogged={props.isLogged}
- setIsLogged={props.setIsLogged}
-/>
-<ShopProduct
-name="Fotolustro - 5h"
-img="fotolustro.jpg"
-price={1400}
-hours={5}
-morekm={2.50}
-gbPriceIndywidual={100}
-gbPriceNormal={50}
-guestBook={true}
-carpet={false}
-km={120}
-isLogged={props.isLogged}
- setIsLogged={props.setIsLogged}
-/>
-<ShopProduct
-name="Fotolustro - 6h"
-img="fotolustro.jpg"
-price={1600}
-hours={6}
-morekm={2.50}
-gbPriceIndywidual={100}
-gbPriceNormal={50}
-guestBook={true}
-carpet={false}
-km={140}
-isLogged={props.isLogged}
- setIsLogged={props.setIsLogged}
-/>
+)
+
+:null
+
+}
+
         </div>
      );
 }

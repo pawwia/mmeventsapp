@@ -36,3 +36,17 @@ padding:40px;
     color: #fff;
 
 }
+
+@media (max-width: 750px) {
+.anOrder
+{
+    width:80%;
+    margin:0;
+    margin-bottom: 20px;;
+    
+}
+.ordersResult
+{
+    padding:0% !important;
+}
+}

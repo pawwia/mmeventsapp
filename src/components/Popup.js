@@ -18,7 +18,8 @@ setShowReservation(!showReservation);
           </div>
           <div className='contentBar'>
             <div className='introduce'>
-<span>Koszt pakietu:{props.price}zł / {props.hours}h</span>
+<span>Koszt pakietu rok {new Date().getFullYear()}:{props.price}zł / {props.hours}h</span>
+<span>Koszt pakietu rok {new Date().getFullYear()+1}:{props.priceNY}zł / {props.hours}h</span>
 
             </div>
             <div className='pactage'>
@@ -49,6 +50,7 @@ setShowReservation(!showReservation);
         hour={props.hour}
         name={props.name}
         price={props.price}
+        priceNY={props.priceNY}
          hours={props.hours}
          morekm={props.morekm} 
          gbPriceIndywidual={props.guestBook?props.gbPriceIndywidual/2:props.gbPriceIndywidual}

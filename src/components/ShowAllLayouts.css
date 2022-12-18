@@ -57,3 +57,24 @@ border:1px solid white;
 border-radius: 3%;;
 
 }
+
+@media (max-width: 750px) {
+
+    .imagesLayout img:first-child
+    {
+        width:70%;
+
+    }
+    .imagesLayout img:last-child
+    {
+        width:80%;
+        margin-top:20px;
+
+    }
+
+    .imagesLayout img
+    {
+        margin-left: 10%;
+    }
+
+}

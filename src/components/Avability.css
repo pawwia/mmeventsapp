@@ -184,3 +184,10 @@ width:30%;
       bottom: 100%;
     }
   }
+
+  @media (max-width: 750px) {
+  .avability{
+    width:100%;
+  }
+  
+  }

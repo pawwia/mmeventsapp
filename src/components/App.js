@@ -3,6 +3,7 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import './App.css';
 import Loader from './Loader';
 import MagicMirror from './MagicMirror';
+import Home from './home';
 
 
 const Header = lazy(() => {
@@ -68,9 +69,9 @@ function App() {
     <Routes>
     <Route path='products/fotolustro' element={<Shop isLogged={isLogged} setIsLogged={setIsLogged} text={"Fotolustro"}  />}/>
 
-    <Route path='products' element={<Page/>}/>
+    <Route path='offer' element={<Page/>}/>
       <Route path='avability' element={<Avability/>}/>
-      <Route path='/' element={<Page/>}/>
+      <Route path='/' element={<Home/>}/>
       <Route path='/products/magicmirror' element={<MagicMirror  />}/>
       <Route path='/MyAccount' element={<MyAccount setIsLogged={setIsLogged} isLogged={isLogged} data={logData}/>}/>
 

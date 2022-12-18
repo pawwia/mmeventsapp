@@ -24,9 +24,9 @@ const handleAccount=()=>{
 <div className='leftMenu'>
     
 
-<a href="https://mmevents.pl">Powrót na stronę</a>
-<Link to="/products">Produkty</Link>
-<Link to="/avability">Dostępność terminu</Link>
+<Link to="/offer">Fotolustro</Link>
+<Link to="/products/fotolustro">Rezerwacje</Link>
+<Link to="/avability">Sprawdź termin</Link>
 
 
 </div>
