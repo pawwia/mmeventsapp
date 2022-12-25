@@ -1,0 +1,106 @@
+.galleryWrap{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+align-items: center;
+justify-content: center;
+max-width: 90%;
+margin:0 auto;
+
+}
+.galleryWrap .single{
+
+cursor: pointer;
+background-color: rgb(255, 255, 255);
+width:200px;
+min-height:250px;
+animation: changeBg 3s infinite ;
+
+}
+
+
+.galleryWrap .single img{
+
+max-width: 100%;
+user-select: none;
+
+}
+@keyframes changeBg {
+    0%  {background-color: rgb(225, 225, 225);}
+    25% {background-color: rgb(55, 55, 55);}
+    50%  {background-color: rgb(188, 188, 188);}
+    100% {background-color: rgb(194, 194, 194);}
+  
+  }
+  
+.galleryWrap .single img:hover{
+
+    transform:scale(1.02)
+}
+
+
+
+    .sliderWrap{
+position: fixed;
+top:0;
+bottom: 0;
+left:0;
+right:0;
+z-index:1100;
+background-color: rgba(0,0,0,0.8);
+display: flex;
+align-items: center;
+justify-content: center;
+width:100%;
+height:100%;
+
+    }
+    .sliderWrap .btnClose{
+        top:40px;
+        right:40px;
+
+    }
+    .sliderWrap .btnClose, .sliderWrap .btnPrev,.sliderWrap .btnNext {
+position:fixed;
+cursor: pointer;
+opacity:0.6;
+color:#fff;
+z-index:1200;
+height:50px;
+
+    }
+
+    .btnNext:hover, .btnPrev:hover, .btnClose:hover {
+    opacity: 1;
+
+    }
+    .sliderWrap .btnPrev{
+top:50%;
+left:40px;
+transform: translateY(-50%);
+
+    }
+.sliderWrap .btnNext{
+top:50%;
+transform:translateY(-50%);
+right:40px;
+
+    }
+
+.fullScreenImage{
+
+    width:calc(100%-40px);
+    height:calc(100%-40px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+
+
+}
+    
+.galOnePhtoo
+{
+    background-size: cover;
+    background-position: center top;
+}

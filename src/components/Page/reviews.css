@@ -1,0 +1,27 @@
+.Reviews
+{
+    width:90%;
+    min-height: 200px;
+    background-color:#ffaf64;
+    padding:5%;
+    padding-top:1%;
+    border-radius: 20px;
+    margin-top:100px;
+}
+.Reviews h2{
+    text-align: center;
+    color:white;
+    font-size:35px;
+
+}
+
+.reviewText{
+padding:15px;
+
+}
+.reviewName
+{
+    background-color: rgb(255,255,255,0.7);
+    margin:15px;
+    border-radius: 15px;;
+}

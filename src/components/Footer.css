@@ -3,7 +3,7 @@ footer
     width:100%;
     min-height:250px;
     background-color: #ff01af;
-    color:#fff;
+    color:#fff !important;
     padding-top:30px;
     font-size:12px;
 
@@ -12,10 +12,11 @@ footer
 .footerContent
 {   
 
-width:60%;
+width:90%;
     height:100%;
     margin-left: auto;
     margin-right: auto;
+    text-align: justify;
 }
 .firstLineFooter
 {    
@@ -107,9 +108,48 @@ width:50%;
 
 
 
+.footerelement{
+float:left;
+width:23%;
+height:150px;
+border-right:2px white solid;
+font-size:15px;
+padding-left: 20px;
+
+}
+.footerelement a
+{text-decoration: none;
+    color:#fff;
+    line-height: 50px;
+    padding-left:15px;
+    font-size:16px;
+    vertical-align: middle;
+}
+.footerelement a:hover
+{
+    color:#f391d4;
+}
+
+.footerelement:last-child{
+border-right: none;
+}
+
+.newFooter:after {
+    content:'';
+    display:block;
+    clear:both;
+  }
+
+
 @media (max-width: 750px) {
 
-
+    .footerelement{
+        width:100%;
+        float:none;
+        border:none;
+        padding-bottom: 30px;
+        padding-left: 20px;;
+    }
 
     .rightFirstLine
     {
@@ -119,6 +159,16 @@ width:50%;
     .firstLineElement {
         width:100%;
         border:none;
+        color:white;
+    }
+    .firstLineElement>h3
+    {
+        font-size:30px;
+        color:white !important;
+    }
+    .footerContent h3
+    {
+        color:white !important;
     }
     .secondLineElement 
     {

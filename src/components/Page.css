@@ -1,7 +1,7 @@
 .Page
 {
     min-height:300px;
-    width:80%;
+    width:90%;
     border-top:1px solid rgb(186, 186, 186);
     margin-left: auto;
     margin-right: auto;
@@ -53,8 +53,109 @@ font-weight: bold;}
     animation: fadeInOut 4s linear forwards;
 }
 
+.mobileButtonMenu
+{
+    display: none;
+
+}
 @keyframes fadeInOut {
  0% { opacity:0; }
  50% { opacity:1; } 
  100% { opacity:0; } 
 }
+.menusBoth
+{width:100%;
+    top:0;
+    left:0;
+    z-index: 10;
+}
+.menusBothAdd
+{
+}
+.prices:after {
+    content:'';
+    display:block;
+    clear:both;
+  }
+.goUp{
+    position:fixed;
+    right:10px;
+    bottom:10px;
+    width:30px;
+    height:30px;
+    background-color: #ff01af;
+    border-radius: 10px;
+    padding:5px;
+    text-align: center;
+    line-height: 30px;;
+    font-size:30px;
+    border: solid white 2px;
+}
+.goUp:hover{
+    cursor: pointer;
+}
+  #fotolustro{}
+
+  .introductionMirror{
+    width:60%;
+    display:block;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 22px;
+
+
+  }
+  .reviews2
+  {
+    margin-top:30px;
+
+  }
+  
+  @media (max-width: 750px) {
+    .introductionMirror{
+        width:90%;
+
+    }
+.categoryElement
+{
+    width:100%;
+    height:60px;
+    text-align: center;
+    border-bottom:1px solid rgb(230, 34, 207);
+    padding:0;
+    padding-top:30px;
+    margin:0;
+    background-color: rgb(129, 129, 129);
+    color:white;
+    display: block;
+
+}
+
+
+.categoryShop{
+    display: block;
+    padding:0;
+}
+.mobileButtonMenu
+{
+    display: block;
+    width:100%;
+    height:50px;
+    text-align: center;
+    color:white;
+padding-top:20px;
+border-radius: 8px;
+    background-color: rgb(234, 128, 215);
+  
+    
+}
+.mobileButtonMenu:hover{
+    cursor: pointer;
+    color:rgb(240, 33, 174)
+}
+.menusBoth
+{width:100%;
+   
+}
+  }

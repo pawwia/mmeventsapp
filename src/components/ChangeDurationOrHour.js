@@ -1,6 +1,9 @@
-import { data } from 'jquery';
-import React, {useState} from 'react';
+import React,{useState} from 'react';
+
 const reqURL='http://localhost/db/sendHourChangeRequest.php';
+
+
+
 const sendRequest=async(url,data)=>{
 
 const resp=await fetch(url,{

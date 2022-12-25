@@ -1,0 +1,100 @@
+.PriceOffer{
+
+    width:19.5%;
+    min-height:200px;
+    float:left;
+    margin-right:2%;
+    border-radius: 30px;
+    padding:2%;
+    color:white;
+
+
+}
+.PriceOffer:nth-child(1)
+{
+    background-color:#f13b9d;
+
+
+}
+
+.PriceOffer:nth-child(2)
+{
+    background-color:#ffaf64;
+
+}
+.PriceOffer:nth-child(3)
+{
+    background-color:#50a1ec;
+
+}
+.PriceOffer:nth-child(4)
+{
+    background-color:#793bcf;
+margin-right: 0;
+}
+
+.PriceOfferPrice{
+    text-align: center;
+}
+.PriceOfferPrice p:first-child
+{
+    font-size: 33px;
+    margin:0;
+    font-weight: 520;
+}
+.PriceOfferPrice p:last-child
+{
+    margin:0;
+}
+
+.PriceOfferLine{
+    margin-top:20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.PriceOfferContain{
+width:100%; 
+min-width:10px;
+padding-bottom:15px;
+padding-top:15px;
+
+
+}
+
+.PriceOfferIcon
+{
+    width:30%;
+    height:100%;
+    padding:15px;
+
+   
+}
+
+
+.PriceOfferDesc
+{
+    width:75%;
+    height:100%;
+    padding-left:15px;
+line-height: 300%;
+}
+
+.PriceOfferContain:nth-child(2n)
+{
+background-color:rgba(0,0,0,0.1);
+border-radius: 15px;
+
+
+
+}
+
+@media (max-width: 750px) {
+
+    .PriceOffer{
+
+width:100%;
+float:none;
+
+    }
+}

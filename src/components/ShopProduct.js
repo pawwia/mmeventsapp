@@ -1,9 +1,12 @@
 import React, {useState } from 'react';
 import './ShopProduct.css';
 import Popup from './Popup';
+import { BackgroundImage } from 'react-image-and-background-image-fade'
+
+
 
 const ShopProduct = (props) => {
-const Image = require(`../images/shop/${props.img}`);
+const Imagej = require(`../images/shop/${props.img}`);
 
 const [showPopup,setShowPopup]=useState(false);
 
@@ -16,7 +19,14 @@ const togglePopup=()=>
 
     return (<>
         <div onClick={togglePopup} className="ProductElement">
-        <img src={Image} loading="lazy" unselectable="on" alt={props.name} />
+        <BackgroundImage 
+        src={Imagej}  
+        unselectable="on" 
+        alt={props.name}   
+       isResponsive
+lazyLoad
+       width="1536px" height="1092px"
+        title='fotolustro' className="mirrorimg"/>
         <div className='NameElement'>{props.name}</div>
         <div className='PriceElement'>od {props.price} zł</div>
     </div>

@@ -74,3 +74,17 @@ text-align: center;
    transition-duration: 1s;
    cursor: pointer;
 }
+
+@media (max-width: 750px) {
+.leftMenu a
+{
+    display: block;
+    width:100%;
+    text-align: center;
+    float:none;
+
+}
+header{
+    display: block;
+}
+}

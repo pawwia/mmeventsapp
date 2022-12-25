@@ -1,0 +1,19 @@
+.CTA
+{
+    width:50%;
+    border-radius: 20px;
+    background-color: rgb(0,0,0,0.5);
+    padding:25px;
+    font-size: 25px;
+    color:white;
+    margin:auto;
+    margin:auto;
+    float:left;
+    
+}
+.CTA a 
+{
+    color:rgb(255, 207, 250);
+    font-weight: 600;
+    text-decoration: none;
+}

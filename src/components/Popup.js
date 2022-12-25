@@ -47,6 +47,7 @@ setShowReservation(!showReservation);
           </div>
         </div>  
         {showReservation?<PopUpBooking 
+        close={PopUpBook}
         hour={props.hour}
         name={props.name}
         price={props.price}

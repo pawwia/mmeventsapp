@@ -71,9 +71,9 @@ function App() {
 
     <Route path='offer' element={<Page/>}/>
       <Route path='avability' element={<Avability/>}/>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/products/magicmirror' element={<MagicMirror  />}/>
-      <Route path='/MyAccount' element={<MyAccount setIsLogged={setIsLogged} isLogged={isLogged} data={logData}/>}/>
+      <Route path='/' element={<Page/>}/>
+      <Route path='/products/magicmirror' element={<MagicMirror  />} title="System rezerwacji fotolustra na imprezy - mmevents.pl"/>
+      <Route path='/MyAccount'  element={<MyAccount setIsLogged={setIsLogged} isLogged={isLogged} data={logData}/>}/>
 
     </Routes>
     <Footer/>

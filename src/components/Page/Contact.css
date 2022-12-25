@@ -1,0 +1,142 @@
+.contactElement{
+width:100%;
+
+
+}
+
+.contactElement:after {
+    content:'';
+    display:block;
+    clear:both;
+  }
+.contactForm{
+width:50%;
+height:100%;
+
+float:left;
+
+}
+.contactData{
+width:50%; 
+height:500px;
+border-radius: 10px;
+background-image: url('../../images/shop/fotolustro.jpg');
+background-size: cover;
+background-position: center top;
+float:left;
+
+
+
+
+}
+.contactDataBlur{
+    border-radius: 10px;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    width:100%;
+    height:100%;
+}
+
+
+.contactDataBlurContent a{
+display:block;
+text-decoration:none;
+color:#ffffff;
+margin-bottom: 10px;
+font-size: 20px;
+
+
+}
+
+.contactDataBlurContent a:hover{
+color:#ff01af
+
+}
+.contactDataBlurContent a:last-child{
+margin-left:37px;
+
+display:inline !important;
+}
+.contactDataBlurContent a:nth-child(6){
+margin-bottom: 30px;;
+}
+.contactDataBlurContent a:nth-child(7){
+    margin-left:40px;
+   
+    display:inline !important;
+    }
+.contactDataBlurContent h2,h3
+{
+    margin: 10px;
+    color:#ff01af;
+}
+
+.contactDataBlurContent
+{
+color:#fff;
+float:left;
+padding-left:20%;
+padding-top:14%;
+}
+.giveEmail
+{
+    background-color: #e8eeef;
+    border: 0;
+    padding: 20px;
+    margin-left: 0%;
+    margin-right: 10%;
+    width: 90%;
+    border-radius: 4px;
+    color: #8a97a0;
+    margin-top: 15px;
+}
+.mainForm button{
+    position: relative;
+    display: inline-block;
+    padding: 20px 40px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .3s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    border-radius: 30px;
+    border:none;
+    background-color: #7b7b7b;
+}
+.mainForm button:hover{
+color:rgb(248, 46, 154);
+cursor:pointer;
+}
+.errorMsg{
+    color:red;
+    font-weight: bold;
+}
+
+@media (max-width: 750px) {
+   .contactElement{
+width:100%;
+float:none;
+   }
+   .contactForm
+   {
+width:100%;
+float:none;
+   }
+   .contactData
+   {width:100%;}
+   .contactDataBlurContent
+{
+padding-left: 5%;
+
+}
+
+
+    } 
+
+  

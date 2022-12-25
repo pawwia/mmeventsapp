@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import './Avability.css';
 import {Link} from 'react-router-dom'
+import ReCAPTCHA from "react-google-recaptcha";
 
 
 const urlAvability='http://localhost/db/checkAvability.php';
@@ -67,6 +68,11 @@ setShowResult(result)
 
     Wybierz datę: <input type="date"  min={Today} max={max} Value={dateToCheck} onChange={(e)=>setDateToCheck(e.target.value)} />
     </div>
+    <ReCAPTCHA
+    sitekey="6Lehw6cjAAAAAOWRtuQlXrWc1VyVGCtgLx1CbH8f"
+    onChange={null}
+  />
+
     <a onClick={checkAvability}>
       <span></span>
       <span></span>

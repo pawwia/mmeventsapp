@@ -556,10 +556,22 @@ else {
 
 
 }
+const confirmClose=()=>{
+
+    if (window.confirm('Czy chcesz przerwać rezerwację? '))
+{
+   props.close();
+}
+}
     return (  
 <div className='popupbooking' >  
+
         <div className='popupbooking_open'>
-        <div className='bookingName'>Rezerwacja</div>
+        <div className='TitleBar'>
+          <span className='Title'><span>Tworzenie rezerwacji w systemie</span></span>
+          <span className='Close'><span onClick={confirmClose}>X</span></span>
+          </div>
+
 <div className='bookingForm'>
 
 </div>
