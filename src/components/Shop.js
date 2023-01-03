@@ -20,7 +20,9 @@ headers:{
 
 const Shop = (props) => {
  
- 
+  useEffect(()=>{
+    props.cpt(props.title);
+    },[])
 
 
 

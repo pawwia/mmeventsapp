@@ -18,13 +18,16 @@ setShowReservation(!showReservation);
           </div>
           <div className='contentBar'>
             <div className='introduce'>
+           
 <span>Koszt pakietu rok {new Date().getFullYear()}:{props.price}zł / {props.hours}h</span>
 <span>Koszt pakietu rok {new Date().getFullYear()+1}:{props.priceNY}zł / {props.hours}h</span>
+<p className='priceDesc'> Koszty usługi dla wesel, urodzin itp do 200 osób. </p>
+              <p className='priceDesc'>Koszty usługi dla imprez plenerowych, imprez firmowych, studniówek, konferencji itp. ustalane są indywidualnie. Celem wyceny wyślij do nas e-mail, skorzystaj z formularza kontaktowego w zakładce fotolustro lub przejdź przez rezerwację a my przy potwierdzaniu zapytamy Cię o szczegóły  </p>
 
             </div>
             <div className='pactage'>
 <span>
-  <h3> Co zawiera wybrany pakiet?</h3>
+  <h2> Co zawiera wybrany pakiet wynajmu fotolustra?</h2>
   <div className='whatContain'>{props.hours} godzin świetnej zabawy</div>
   <div className='whatContain'>Nielimitowaną liczbę wydurków</div>
   <div className='whatContain'>Pomoc asystentów</div>
@@ -37,8 +40,8 @@ setShowReservation(!showReservation);
   
   <h3>W tym pakiecie dostarczamy fotolustro do {props.km} km od Szczecina</h3>
   
-  <button onClick={PopUpBook}>Sprawdź i zarezerwuj swój termin klikając tutaj!</button>
-<button onClick={props.closePopup}>Wróć i wybierz inny pakiet</button>
+  <button className="resCheck" onClick={PopUpBook}>Sprawdź i zarezerwuj swój termin klikając tutaj!</button>
+<button className="resCheck" onClick={props.closePopup}>Wróć i wybierz inny pakiet</button>
 </span>
 
             </div>

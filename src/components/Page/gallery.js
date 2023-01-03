@@ -17,23 +17,31 @@ const Gallery = (scrollPosition) => {
 
     const galleryImages=[
 
-        {img:require('../../images/galleryPage/0 (1).jpg')},
-        {img:require('../../images/galleryPage/0 (2).jpg')},
-        {img:require('../../images/galleryPage/0 (3).jpg')},
-        {img:require('../../images/galleryPage/0 (4).jpg')},
-        {img:require('../../images/galleryPage/0 (5).jpg')},
-        {img:require('../../images/galleryPage/0 (6).jpg')},
-        {img:require('../../images/galleryPage/0 (7).jpg')},
-        {img:require('../../images/galleryPage/0 (8).jpg')},
-        {img:require('../../images/galleryPage/0 (9).jpg')},
-        {img:require('../../images/galleryPage/0 (10).jpg')},
+        {img:require('../../images/galleryPage/0 (1).JPG')},
+        {img:require('../../images/galleryPage/0 (2).JPG')},
+        {img:require('../../images/galleryPage/0 (3).JPG')},
+        {img:require('../../images/galleryPage/0 (4).JPG')},
+        {img:require('../../images/galleryPage/0 (5).JPG')},
+        {img:require('../../images/galleryPage/0 (6).JPG')},
+        {img:require('../../images/galleryPage/0 (7).JPG')},
+        {img:require('../../images/galleryPage/0 (8).JPG')},
+        {img:require('../../images/galleryPage/0 (9).JPG')},
+        {img:require('../../images/galleryPage/0 (10).JPG')},
         {img:require('../../images/galleryPage/0 (11).JPG')},
         {img:require('../../images/galleryPage/0 (12).JPG')},
-        {img:require('../../images/galleryPage/0 (13).jpg')},
-        {img:require('../../images/galleryPage/0 (14).jpg')},
-        {img:require('../../images/galleryPage/0 (15).jpg')},
-        {img:require('../../images/galleryPage/0 (16).jpg')},
-        {img:require('../../images/galleryPage/0 (17).jpg')}
+        {img:require('../../images/galleryPage/0 (13).JPG')},
+        {img:require('../../images/galleryPage/0 (14).JPG')},
+        {img:require('../../images/galleryPage/0 (15).JPG')},
+        {img:require('../../images/galleryPage/0 (16).JPG')},
+        {img:require('../../images/galleryPage/0 (17).JPG')},
+        {img:require('../../images/galleryPage/0 (18).JPG')},
+        {img:require('../../images/galleryPage/0 (19).JPG')},
+        {img:require('../../images/galleryPage/0 (20).JPG')},
+        {img:require('../../images/galleryPage/0 (21).JPG')},
+        {img:require('../../images/galleryPage/0 (22).JPG')},
+        {img:require('../../images/galleryPage/0 (23).JPG')},
+        {img:require('../../images/galleryPage/0 (24).JPG')},
+
         ]
 
         

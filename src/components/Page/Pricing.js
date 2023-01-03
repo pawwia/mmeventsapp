@@ -16,7 +16,10 @@ const Pricing = (props) => {
     return ( 
 
        <div className='PriceOffer'>
-<div className='PriceOfferName'></div>
+<div className='PriceOfferName'>
+
+
+</div>
 <div className='PriceOfferPrice'><AnimationOnScroll animateIn="animate__shakeY" animateOut="animate__bounceOutRight">
 
 <p>{props.price} ZŁ</p><p>/ {props.hours} godz. </p></AnimationOnScroll>
@@ -62,7 +65,8 @@ const Pricing = (props) => {
 
 <span className='PriceOfferDesc'>Dojazd {props.km}</span>
 </div>
-
+<p>Ceny dla imprez do 200 osób. </p>
+<p>W przypadku imprez firmowych, studniówek, imprez plenerowych, imprez masowych przygotowujemy indywidualne oferty. Prosimy o złożenie zapytania.  </p>
 
 
         </div>

@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useState,useEffect, useRef} from 'react';
 import './Page.css';
 import Faq from './Page/Faq';
 import Fotolustro from './Page/fotolustro';
@@ -10,8 +10,10 @@ import "animate.css/animate.min.css";
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import Gallery from './Page/gallery';
 
-const Page = () => {
-
+const Page = (props) => {
+    useEffect(()=>{
+        props.cpt(props.title);
+        },[])
     
 const [startFaqAnimation,setStartFaqAnimation]=useState(false);
 const ref = useRef(null);
@@ -40,7 +42,7 @@ const goUpFunc=()=>
 </div>
 </div>
 <div className='categoryPage' >
-<AnimationOnScroll  animateIn="animate__tada"><h1>Magic Moments Events</h1></AnimationOnScroll>
+<h1 className="loaded">Magic Moments Events</h1>
 <p className='introductionMirror'>
    W Magic moments events zajmujemy się zapewnianiem świetnej zabawy na Waszych imprezach! Nasze fotolustro świetnie sprawdzi się na weselach, urodzinach, przyjęciach, studniówkach, festynach,  imprezach firmowych i innych eventach. Poza szaloną zabawą otrzymacie od nas pamiątkę w postaci wydruku wykonanych zdjęć już w kilka sekund. Pozytywne emocje upamiętnione na zdjęciach prosto z Waszej imprezy!
 </p>

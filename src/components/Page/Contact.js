@@ -5,7 +5,23 @@ import Facebook from '../../images/footer/facebook.svg'
 import Logo from '../../images/page/magicmomentsevents.svg'
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import "animate.css/animate.min.css";
+const sendContact=async(url,data)=>{
 
+    const resp=await fetch(url,{
+    method:'POST',
+    body:JSON.stringify(data),
+    headers:{
+      'Content-Type': 'application/json'
+    
+    }  
+    
+        });
+     
+    
+    
+        const json = await resp.json();
+        return json;
+    }
 const Contact = (props) => {
 const [respEmail,setRespEmail]=useState("");
 const [message,setMessage]=useState("");
@@ -16,7 +32,43 @@ const sendMessage=()=>{
     if(respEmail.length>4 && message.length>20&&acceptRules)
     {
         setErrorMsg(null);
-        return null
+       
+const topic="Wysłano formularz mmevents.pl"
+const text1="Dzień dobry, potwierdzamy nadanie wiadomości o treści: <br/>"+message+"Odpowiemy na wiadomość w ciągu jednego dnia roboczego.";
+const text2="Nowy formularz ze strony mmevents <br/> E-mail: "+respEmail+"<br/>Treść:"+message;
+const urlContact='http://localhost/db/sendContactForm.php';
+
+const data={
+topic:topic,
+text1:text1,
+text2:text2,
+email:respEmail,
+
+}
+
+
+
+
+    setErrorMsg(null);
+const resultsAv= sendContact(urlContact,data)
+if(resultsAv)
+{
+    resultsAv.then((result)=>{
+if(result.connected===true)
+{ 
+    setErrorMsg("Wiadomość wysłana poprawnie");
+    setMessage("");
+    setRespEmail("");
+    setAcceptRules(false);
+}
+else setErrorMsg("Nie można było wysłać wiadomości. Napisz do nas pod adres E-mail: kontakt@mmevents.pl")
+
+    })
+
+}
+
+
+
     }
     else 
     {

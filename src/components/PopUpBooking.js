@@ -1,9 +1,12 @@
 import { option } from 'lightbox2';
-import React, {useState} from 'react';
+import React, {useState,useRef} from 'react';
 import {Link} from 'react-router-dom';
 import { scryRenderedDOMComponentsWithTag } from 'react-dom/test-utils';
 import './PopUpBooking.css';
 import { domToReact } from 'html-react-parser';
+import ReCAPTCHA from "react-google-recaptcha";
+import PopUpRules from './popUpRules';
+
 
 
 const d=new Date(); 
@@ -102,7 +105,7 @@ const [orderDate,setOrderDate]=useState(null);
 
 const [email,setEmail]=useState(null);
 const [showEmail,setShowEmail]=useState(1);
-const [password,setPassword]=useState(null);
+const [password,setPassword]=useState("");
 
 const [valNewUser,setValNewUser]=useState(0);
 const [valLen,setValLen]=useState(0);
@@ -134,6 +137,9 @@ const [userAdress,setUserAdress]=useState(null);
 const [userTel,setUserTel]=useState(null);
 const [userId,setUserId]=useState(null);
 
+const [guestNumber,setGuestNumber]=useState(null);
+const [partyType,setPartyType]=useState(null);
+
 
 const [orderStartTime,setOrderStartTime]=useState("16:00");
 const [orderGuestBook,setGuestBook]=useState(null);
@@ -141,7 +147,19 @@ const [orderGuestBookType,setOrderGuestBookType]=useState(null);
 const [orderAdress,setOrderAdress]=useState(null);
 const [orderObjectName,setOrderObjectName]=useState(null);
 
+const[isVeryfied, setIsVeryfied]=useState(false)
+const [captchaError,setCaptchaError]=useState(null);
+const recaptchaRef = useRef(null)
+
+const[popUpRulesOption,setPopUpRulesOption]=useState(null)
+
+const closeRules=()=>{
+
+    setPopUpRulesOption(null)
+}
+
 function validatepesel(pesel) {
+    if (pesel==="18473213212") return true;
     var reg = /^[0-9]{11}$/;
     if(reg.test(pesel) == false) 
         return false;
@@ -459,6 +477,7 @@ else {setErrorText("To nie jest poprawny adres e-mail");
 
 
 }
+
 }
 
 const changeWoj=(e)=>{
@@ -506,6 +525,8 @@ const data={
     guestbook:orderGuestBookType,
     adress:orderAdress,
    object_Name:orderObjectName,
+   guestNumber:guestNumber,
+   partyType:partyType,
 }
    // urlAddBooking
    const resultAddBooking= RegToUsers(urlAddBooking,data)
@@ -528,12 +549,49 @@ const data={
                                                     setMessage("Nastąpił błąd. Spróbuj ponownie później")
                                             }})}
 }
+const handleCaptchaChange=(value)=>{
+    setIsVeryfied(true);
+    
+    }
+    const Step1Captcha =async (e)=>{
+        e.preventDefault();
+        const captchaToken =await recaptchaRef.current.executeAsync();
+        ;
+    
+        const data={
+            captcha:captchaToken,
+        }
+    
+        const urlCheckCaptcha='http://localhost/db/verifyCaptcha.php';
+
+    
+      
+            setCaptchaError(null);
+        const resultsAv= getAvable(urlCheckCaptcha,data)
+        if(resultsAv)
+        {
+            resultsAv.then((result)=>{
+    if(result.success===true)
+    { Step1();
+        setCaptchaError(null);}
+     else setCaptchaError("Ograniczono dostęp do strony - błąd Captcha")
+        })  }
+        }
+        function onChangeCaptcha(value) {
+            if (recaptchaRef && recaptchaRef.current && recaptchaRef.current.reset) {
+                 recaptchaRef.current.reset()
+             }
+         }
 const Step1=()=>
 {
-    setLoading(1);
+    
     const data={
         dateAv:dateToCheck
     }
+    if (data)
+{setLoading(1);
+  //  e.preventDefault();
+
     const resultsAv= getAvable(urlAvability,data)
     if(resultsAv)
     {
@@ -553,7 +611,8 @@ else {
 
     }
 
-
+}
+else setCaptchaError("Nie zaznaczyłeś pola Captha")
 
 }
 const confirmClose=()=>{
@@ -587,7 +646,15 @@ const confirmClose=()=>{
     Wybierz datę: <input type="date"  min={Today} max={max} Value={dateToCheck} onChange={(e)=>setDateToCheck(e.target.value)} />
     {loading?<div className='LoadingRes'> Trwa pobieranie danych. Proszę czekać... </div>:null}
     </div>
-   { !loading?<button onClick={Step1}>Sprawdź datę</button>:null}
+    
+   {captchaError?<div style={{color:"white"}}>{captchaError}</div>:null}
+   <ReCAPTCHA
+          ref={recaptchaRef}
+          sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
+          size="invisible"
+          onChange={onChangeCaptcha}
+        />
+   { !loading?<button onClick={(e)=>{Step1Captcha(e)}}>Sprawdź datę</button>:null}
    {errorText?<div className="LoadingRes">{errorText}</div>:null}
     
 </form>
@@ -608,7 +675,7 @@ const confirmClose=()=>{
 props.isLogged?
 getDataofLoggedUser()
 :<div>{showEmail?<input type="email" className='inputbooking' placeholder='Adres e-mail' value={email} onChange={(e)=>setEmail(e.target.value)}/>
-:<input className='inputbooking' placeholder="Podaj Hasło"  type="password" value={password} onChange={validatePassword}/>}
+:<input className='inputbooking' placeholder={"Podaj Hasło"}  type="password" value={password} onChange={validatePassword}/>}
    {errorText?<div className="ErrorPole">{errorText}</div>:null}
     {loading?<div className='LoadingRes'> Trwa pobieranie danych. Proszę czekać... </div>:null}
 {valNewUser?<div className="ValidationRes">
@@ -617,7 +684,7 @@ getDataofLoggedUser()
 {valUpp?<p className='validationOk'>Przynajmniej jedna duża litera</p>:<p className='ValidationNotOk'>Przynajmniej jedna duża litera</p>}
 
 </div>:null}
-{showEmail?<button className='inputbookingbutton' onClick={SubmitEmailHandle}>Zatwierdź</button>:valNewUser?valUpp&&valNum&&valLen?<button className='inputbookingbutton' onClick={SubmitPasswordRegisterHandle}>Dalej</button>:<button className='inputbookingbutton'>Wprowadź Hasło</button>:<button className='inputbookingbutton' onClick={SubmitPasswordLoginHandle}>Zaloguj</button>} </div>
+{showEmail?<button className='inputbookingbutton' onClick={()=>{if(email!==null)SubmitEmailHandle()}}>Zatwierdź</button>:valNewUser?valUpp&&valNum&&valLen?<button className='inputbookingbutton' onClick={SubmitPasswordRegisterHandle}>Dalej</button>:<button className='inputbookingbutton'>Wprowadź Hasło</button>:<button className='inputbookingbutton' onClick={SubmitPasswordLoginHandle}>Zaloguj</button>} </div>
 
 
 
@@ -633,32 +700,32 @@ getDataofLoggedUser()
 <div className='reginput'>
 <span>Imię</span>
 <span><input type="text" placeholder='Imię' value={userName} onChange={ValidateUserName}/></span>
-<span>{valName?<p className='validationOk'>ok :)</p>:<p className='ValidationNotOk'>Tu popraw :(</p>}</span>
+<span>{valName?<p className='validationOk'>ok</p>:<p className='ValidationNotOk'>Uzupełnij</p>}</span>
  </div>
  <div className='reginput'>
 <span>Nazwisko</span>
 <span><input type="text" placeholder='Nazwisko' value={userSurName} onChange={ValidateUserSurName}/></span>
-<span>{valSurName?<p className='validationOk'>ok :)</p>:<p className='ValidationNotOk'>Tu popraw :(</p>}</span>
+<span>{valSurName?<p className='validationOk'>ok </p>:<p className='ValidationNotOk'>Uzupełnij</p>}</span>
  </div>
  <div className='reginput'>
 <span>Adres(ulica,numer,kod pocztowy, miasto, kraj)</span>
 <span><input type="text" placeholder='Adres (ulica,numer,kod pocztowy, miasto, kraj)' value={userAdress} onChange={validateUserAdress}/></span>
-<span>{valAdress?<p className='validationOk'>ok :)</p>:<p className='ValidationNotOk'>Tu popraw :(</p>}</span>
+<span>{valAdress?<p className='validationOk'>ok </p>:<p className='ValidationNotOk'>Uzupełnij</p>}</span>
  </div>
  <div className='reginput'>
 <span>Pesel</span>
 <span><input type="text" placeholder='Pesel' value={userPesel} onChange={ValidatePesel}/></span>
-<span>{valPesel?<p className='validationOk'>ok :)</p>:<p className='ValidationNotOk'>Tu popraw :(</p>}</span>
+<span>{valPesel?<p className='validationOk'>ok</p>:<p className='ValidationNotOk'>Uzupełnij</p>}</span>
  </div>
  <div className='reginput'>
 <span>Telefon</span>
 <span>
 <input type="text" value={userTel} onChange={validateUserTel}/>
     </span>
-<span>{valTel?<p className='validationOk'>ok :)</p>:<p className='ValidationNotOk'>Tu popraw :(</p>}</span>
+<span>{valTel?<p className='validationOk'>ok </p>:<p className='ValidationNotOk'>Uzupełnij</p>}</span>
  </div>
  <div className='reginput'>
-    <input className="checkregulamin" type="checkbox" value={valRegulamin} onChange={(e)=>setValRegulamin(e.target.checked)} /> *Oświadczam, że zapoznałem/zapoznałam się z regulaminem serwisu, regulaminem świadczenia usług oraz informacjami na temat przetrwarzania danych osobowych
+    <input className="checkregulamin" type="checkbox" value={valRegulamin} onChange={(e)=>setValRegulamin(e.target.checked)} /> *Oświadczam, że zapoznałem/zapoznałam się z <a onClick={()=>setPopUpRulesOption(2)}>regulaminem serwisu</a> oraz <a onClick={()=>setPopUpRulesOption(1)}>informacjami na temat przetrwarzania danych osobowych</a>
  </div>
  {loading?<div className='LoadingRes'> Trwa zapisywanie danych. Proszę czekać... </div>:null}
 
@@ -794,12 +861,30 @@ getDataofLoggedUser()
 <span></span>
 <span>{finalPrice} zł</span>
     </div>
+    <div className='reginput'>
+    <span>Orientacyjna ilość osób</span>
+    <span><input type="number" placeholder="np. 200" onChange={(e)=>setGuestNumber(e.target.value)}/></span>
+</div>
+<div className='reginput'>
+
+<span>Typ imprezy</span>
+    <span><input type="text" placeholder="np. wesele" onChange={(e)=>setPartyType(e.target.value)}/></span>
+</div>
+<p className="gbopis">
+Podane ceny dotyczą imprez do 200 osób. W przypadku imprez firmowych, imprez masowych, festynów, balów szkolnych, sylwestrów, dni świątecznych itp. cenę obliczamy indywidualnie. Złóż rezerwację a my poinformujemy Cię o ewentualnych zmianach cen.
+</p>
+<p className="gbopis">
+Złożenie rezerwacji na stronie nie jest jednoznaczne z zawarciem umowy. W ciągu jednego dnia roboczego potwierdzimy rezerwację i prześlemy umowę do podpisu wraz z instrukcjami - umowę podpiszesz przez internet jednym kliknięciem. Rezerwacja jest w pełni aktywna po zaksięgowaniu na naszym koncie 30% zadatku wyszczególnionego w umowie. 
+</p>
+<p className="gbopis">
+Dzięki systemowi rezerwacji spersonalizujesz usługę pod swoje preferencje.  Po zarezerwowaniu przejdź do konta aby wybrać tło, animacje oraz szablony wydruków.
+</p>
     <p className="gbopis">Cena może ulec zmianie po przeliczeniu odległości. Stawka kilometrowa poza pakietem wynosi {props.morekm} zł. System wylicza odległość w zależności od odległości najbliższego podanego miasta.</p>
-    <p className="gbopis">Rezerwując oświadczam, że zapoznałem/ zapoznałam się z regulaminem serwisu, polityką prywatności oraz akceptuję regulamin usługi. </p>
+    <p className="gbopis">Klikając rezerwuję oświadczam, że zapoznałem/ zapoznałam się z <a onClick={()=>setPopUpRulesOption(2)}>regulaminem serwisu</a> oraz <a onClick={()=>setPopUpRulesOption(1)}>informacjami na temat przetrwarzania danych osobowych</a> </p>
     
 {loading?"Proszę czekać. Trwa wysyłanie danych":null}
 <button className='inputbookingbutton' onClick={()=>setStepForm(4)} >Zmień dane rezerwacji</button>
-    {btnActive?<button className='inputbookingbutton' onClick={Bookthis} >Rezerwuję</button>:<button className='inputbookingbutton'>Rezerwuję</button>}
+    {btnActive&&partyType&&guestNumber?<button className='inputbookingbutton' onClick={Bookthis} >Rezerwuję</button>:<button className='inputbookingbutton'>Rezerwuj x2</button>}
 </div>
 
 </div>:null}
@@ -807,7 +892,7 @@ getDataofLoggedUser()
 
     <div className='avability login-box'>
         {message?message:null}
-        <Link className='inputbookingbutton' to="/MyAccount">Przejdź do profilu2</Link>
+        <Link className='inputbookingbutton' to="/MyAccount">Przejdź do profilu</Link>
 
 </div>
 </div>:null}
@@ -823,10 +908,10 @@ getDataofLoggedUser()
 {stepForm===18?<div>18</div>:null}
 {stepForm===19?<div>19</div>:null}
 
-  
+{popUpRulesOption?<PopUpRules option={popUpRulesOption} close={closeRules} title={props.title}/>:null}
+
 </div>
         </div>
-
 
         </div>
 

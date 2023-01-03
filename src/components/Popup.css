@@ -77,7 +77,40 @@ cursor: pointer;
 .c{
   display: block;
   margin-bottom: 100px;
+
+}
+.pactage
+{
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+}
+.whatContain{
+padding:13px;
+color:rgb(72, 72, 72);
+border-bottom: 1px solid black;
   
+}
+.resCheck{
+  padding:15px;
+  border:none;
+  display:block;
+  margin-left:auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  background-color:#ff0081;
+  color:white;
+  font-size:22px;
+  border-radius: 10px;
+  
+}
+.resCheck:hover{
+color:#7b003d;
+cursor:pointer;
+
+}
+.priceDesc{
+  font-size:14px !important;
 }
   @media (max-width: 750px) {
     .popup_open{

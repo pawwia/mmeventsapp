@@ -13,7 +13,7 @@ margin:0 auto;
 cursor: pointer;
 background-color: rgb(255, 255, 255);
 width:200px;
-min-height:250px;
+height:250px;
 animation: changeBg 3s infinite ;
 
 }
@@ -21,8 +21,9 @@ animation: changeBg 3s infinite ;
 
 .galleryWrap .single img{
 
-max-width: 100%;
+width: 100%;
 user-select: none;
+height:250px;
 
 }
 @keyframes changeBg {

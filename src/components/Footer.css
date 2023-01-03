@@ -1,7 +1,7 @@
 footer
 {
     width:100%;
-    min-height:250px;
+    min-height:350px;
     background-color: #ff01af;
     color:#fff !important;
     padding-top:30px;
@@ -95,10 +95,16 @@ height:100%;
     display: table-cell;
     vertical-align: middle;
 }
-.secondLineElement
+.secondLineElement, .secondLineElement a
 {
-  width:25%;
+margin-right: 30px;;
   float:left;
+  color:#fff !important;
+  text-decoration: none !important;
+
+
+
+  
 }
 .secondLineElement:first-child
 {
@@ -170,11 +176,14 @@ border-right: none;
     {
         color:white !important;
     }
-    .secondLineElement 
+    .secondLineElement, .secondLineElement a
     {
         width:100%;
         margin-bottom: 14px;
         margin-left:20px;
+        color:#fff !important;
+        text-decoration: none !important;
+
 
 
     }

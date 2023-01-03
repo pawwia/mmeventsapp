@@ -184,6 +184,14 @@ width:30%;
       bottom: 100%;
     }
   }
+  .checkAvbButton span a
+  {
+    cursor: pointer !important;
+  }
+  .checkAvbButton:hover span:hover a:hover
+  {
+    cursor: pointer !important;
+  }
 
   @media (max-width: 750px) {
   .avability{

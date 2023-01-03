@@ -50,7 +50,9 @@ const MyAccount = (props) => {
     const [error,setError]=useState(null);
 const [orders,setOrders]=useState(null);
 
-
+useEffect(()=>{
+    props.cpt(props.title);
+    },[])
      
 useEffect(()=>{
 

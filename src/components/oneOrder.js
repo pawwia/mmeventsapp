@@ -164,7 +164,7 @@ const closeAskForChange=()=>{
               <div className='orderinfoElement'>
                   <span>Szablon wydruku</span>
                   <span>{changeLayout?<input type="text" value={changedLayout} onChange={e=>setChangedLayout(e.target.value)}/>:changedLayout}</span>
-                  <span> {difference<4?"Minął czas zmiany.":<button onClick={()=>setChangeLayout(1)} >Edytuj</button> }</span>
+                  <span> {difference<2?"Minął czas zmiany.":<button onClick={()=>setChangeLayout(1)} >Edytuj</button> }</span>
               </div>
               <div className='orderinfoElement'>
                   <span>Imię/ imiona na wydruku</span>
@@ -185,7 +185,7 @@ const closeAskForChange=()=>{
               {guestbook?<div className='orderinfoElement'>
                   <span>typ księgi/ napis </span>
                   <span>{guestbook_type} </span>
-                  <span>{difference<7?"Minął czas zmiany.":"Edytuj"}</span>
+                  <span>{difference<2?"Minął czas zmiany.":"Edytuj"}</span>
               </div>:null}
               <div className='TitleorderInfo'>Dodatkowe informacje?</div>
               <div className='orderinfoElement'>

@@ -272,7 +272,7 @@ color:rgba(255, 1, 175,.75);
   }
   .validationOk{
 
-    color:green;
+    color:rgb(85, 255, 85);
    
 font-size:16px !important;
 text-align: left !important;
@@ -283,7 +283,7 @@ margin-bottom: 0;
   }
 
   .ValidationNotOk{
-color:rgb(163, 0, 0);
+color:rgb(255, 185, 185);
 font-size:16px !important;
 text-align: left !important;
 margin-left: 22%;
@@ -346,7 +346,7 @@ display:inline-block;
 display: inline-block !important;
  }
  .gbopis{
-  font-size:10px !important;
+  font-size:13px !important;
   color:#e8e8e8
  }
  .gbtake:hover{

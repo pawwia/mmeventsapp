@@ -42,7 +42,8 @@ const Fotolustro = () => {
 <div className=' magicElement fotolustro'>
 <div className='fotolustroAll'>
 <div className='textfotolustro' id="fotolustro">
-<AnimationOnScroll  animateIn="animate__tada"><h3 style={{textAlign:"left"}}>Fotolustro</h3></AnimationOnScroll>
+
+    <h3 className="loaded"  style={{textAlign:"left"}}>Fotolustro</h3>
 <p>
 Fotolustro to nowoczesna forma znanej dotychczas wszystkim fotobudki. Różni się przede wszystkim wyglądem - do złudzenia przypomina wielkie lustro. Przyozdobione jest elegancką srebrną ramą, którą możemy podświetlić w dowolnym kolorze. Posiada dotykowy, interaktywny ekran, który wyświetla zabawne animacje, które poprowadzą Was przez cały proces robienia zdjęć. Dzięki tematycznym animacjom fotolustro świetnie sprawdzi się na każdego rodzaju imprezie!  Mamy aż 8 animacji na różne okazje: weselne, imprezowe, dziecięce , świąteczne, halloweenowe oraz uniwersalne także w języku angielskim. Tak jak w tradycyjnej fotobudce zdjęcia drukowane są już w kilka sekund po ich wykonaniu! Fotolustro samo poprowadzi Was przez cały proces robienia zdjęcia, które następnie możecie dowolnie personalizować- dodawać podpisy oraz emotikony. Gotowe wyruki zdjęć możecie wkleić do pamiątkowej księgi gości i opatrzyć je swoimi podpisami i życzeniami.  Do fotolustra możemy dostawić eleganckie srebrne słupki oraz czerwony dywan dzięki czemu poczujecie się jak prawdziwe gwiazdy!  
 </p>

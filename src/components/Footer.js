@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css'
+import { Link } from 'react-router-dom';
 import Instagram from '../images/footer/instagram.svg'
 import Facebook from '../images/footer/facebook.svg'
 import Email from '../images/footer/email.svg'
@@ -53,7 +54,7 @@ const Footer = () => {
   </div>
   <div className=" footerelement">
     <h3 style={{color:'#fff'}}>Strefa klienta</h3>
-  <div> <a href="galeria.html">Galeria Zdjęć</a></div>
+  <div> <Link to="/galery">Galeria zdjęć</Link></div>
     
   </div>
   </div>
@@ -63,8 +64,8 @@ const Footer = () => {
 
 <div className='secondLineFooter'>
     <div className='secondLineElement'>© 2022 All Copyrights Reserved To mmevents.pl </div>
-    <div className='secondLineElement'>Polityka prywatności</div>
-    <div className='secondLineElement'>Regulamin witryny</div>
+    <div className='secondLineElement'><Link to="/privacy">Polityka prywatności</Link></div>
+  <div className='secondLineElement'> <Link to="/rules"> Regulamin witryny</Link></div>
 </div>
 
 </div>

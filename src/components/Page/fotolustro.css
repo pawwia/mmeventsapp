@@ -147,6 +147,15 @@ border-radius: 15px;;
 width:100%;
     }
 
+    .loaded {
+        animation:animatezoom 0.6s}
+        @keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}
+        
+       
+      }
+
+    
+
 
       @media (max-width: 750px) {
 
@@ -177,3 +186,4 @@ width: 100%;
 
 
       }
+
