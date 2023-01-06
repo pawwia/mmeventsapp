@@ -16,17 +16,16 @@ headers:{
 
 
 const OrderLayout = (props) => {
+  
     const [tempBg, setTempBg]=useState(props.changeBg);
-    const [dataLayout, setDataLayout]=useState();
+    const [dataLayout, setDataLayout]=useState(null);
     const [actButton, setActButton]=useState(0)
     const [allBg,setAllBg]=useState();
     const [showNumber,setShowNumber]=useState(1);
-
-    const[showTypeOfLayout, setShowTypeOfLayout]=useState(null)
     const [chosenLayout,setChosenLayout]=useState(props.changeBg)
 
     
-    const handleShowLayout=(urlLo,type)=>{
+    const handleShowLayout= (urlLo,type)=>{
 const data={
     typeLayout:type
 
@@ -35,15 +34,15 @@ const data={
         if (getDateUser){
    
 
-            getDateUser.then( function(result) {
+            getDateUser.then(  function(result) {
               console.log(dataLayout);
-setDataLayout(result);
-console.log(dataLayout);
+              setDataLayout(result)
 
- })    
+})
+  
  }
     }
-
+   
     return ( 
         <div className='popup' >  
         <div className='popup_open'> 
@@ -53,10 +52,10 @@ console.log(dataLayout);
           </div>
           <div className='contentBar'>
         <h2>Wybierz rodzaj swojej imprezy</h2>
-        <div onClick={()=>{setShowTypeOfLayout("weselne");handleShowLayout(urlLo,showTypeOfLayout)}} className='typeofLayout'>Wesele</div>     
-        <div onClick={()=>{setShowTypeOfLayout("urodziny");handleShowLayout(urlLo,showTypeOfLayout)}} className='typeofLayout'>Urodziny</div>     
-        <div onClick={()=>{setShowTypeOfLayout("bale");handleShowLayout(urlLo,showTypeOfLayout)}} className='typeofLayout'>Bale</div>     
-        <div onClick={()=>{setShowTypeOfLayout("uniwersalne");handleShowLayout(urlLo,showTypeOfLayout)}} className='typeofLayout'>Uniwersalne</div>     
+        <div onClick={()=>{handleShowLayout(urlLo,"weselne")}} className='typeofLayout'>Wesele</div>     
+        <div onClick={()=>{handleShowLayout(urlLo,"urodziny")}} className='typeofLayout'>Urodziny</div>     
+        <div  onClick={()=>{handleShowLayout(urlLo,"bale")}} className='typeofLayout'>Bale</div>     
+        <div onClick={()=>{handleShowLayout(urlLo,"uniwersalne")}} className='typeofLayout'>Uniwersalne</div>     
 
 {dataLayout?
 dataLayout.map((data)=>
