@@ -36,7 +36,7 @@ const sendMessage=()=>{
 const topic="Wysłano formularz mmevents.pl"
 const text1="Dzień dobry, potwierdzamy nadanie wiadomości o treści: <br/>"+message+"Odpowiemy na wiadomość w ciągu jednego dnia roboczego.";
 const text2="Nowy formularz ze strony mmevents <br/> E-mail: "+respEmail+"<br/>Treść:"+message;
-const urlContact='http://localhost/db/sendContactForm.php';
+const urlContact='http://app.mmevents.pl/db/sendContactForm.php';
 
 const data={
 topic:topic,

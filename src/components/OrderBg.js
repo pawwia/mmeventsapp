@@ -1,6 +1,6 @@
 import React, {useEffect,useState} from 'react';
 import './OrderBg.css';
-const urlShowBg='http://localhost/db/showAllBg.php';
+const urlShowBg='http://app.mmevents.pl/db/showAllBg.php';
 const showAllBg=async(url)=>{
 
 const resp=await fetch(url,{
@@ -16,7 +16,7 @@ headers:{
     const json = await resp.json();
     return json;
 }
-const urlBg='http://localhost/db/updateBg.php';
+const urlBg='http://app.mmevents.pl/db/updateBg.php';
 const updateBg=async(url,data)=>{
 
 const resp=await fetch(url,{

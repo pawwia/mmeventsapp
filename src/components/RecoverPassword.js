@@ -2,8 +2,8 @@ import { wait } from '@testing-library/user-event/dist/utils';
 import React, {useState} from 'react';
 import './RecoverPassword.css';
 
-const urlLogin='http://localhost/db/newPassword.php';
-const urlmnp='http://localhost/db/makenewpassword.php';
+const urlLogin='http://app.mmevents.pl/db/newPassword.php';
+const urlmnp='http://app.mmevents.pl/db/makenewpassword.php';
 
 const enviarData=async(url,data)=>{
 

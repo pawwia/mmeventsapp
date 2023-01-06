@@ -1,7 +1,7 @@
 import React, {useEffect,useState} from 'react';
 import './OrderLayout.css';
 import ShowAllLayouts from './ShowAllLayouts';
-const urlLo='http://localhost/db/getlayouts.php';
+const urlLo='http://app.mmevents.pl/db/getlayouts.php';
 const funcgetleyouts=async(url,data)=>{
 
 const resp=await fetch(url,{

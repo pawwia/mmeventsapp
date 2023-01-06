@@ -2,7 +2,7 @@ import React, {useEffect,useState} from 'react';
 import './OrderAni.css';
 import Parser from 'html-react-parser';    
 
-const urlShowBg='http://localhost/db/showAllAni.php';
+const urlShowBg='http://app.mmevents.pl/db/showAllAni.php';
 const showAllBg=async(url)=>{
 
 const resp=await fetch(url,{
@@ -18,7 +18,7 @@ headers:{
     const json = await resp.json();
     return json;
 }
-const urlBg='http://localhost/db/updateAni.php';
+const urlBg='http://app.mmevents.pl/db/updateAni.php';
 const updateBg=async(url,data)=>{
 
 const resp=await fetch(url,{

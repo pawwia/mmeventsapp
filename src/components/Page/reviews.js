@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './reviews.css';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-const reqURL='http://localhost/db/getreviews.php';
+const reqURL='http://app.mmevents.pl/db/getreviews.php';
 const getreviews=async(url)=>{
     const resp=await fetch(url,{
     headers:{

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './MyAccount.css'
 import ShowUserData from './ShowUserData';
 
-const urlLogin='http://localhost/db/getOrders.php';
+const urlLogin='http://app.mmevents.pl/db/getOrders.php';
 const enviarData=async(url,data)=>{
 
 const resp=await fetch(url,{
@@ -23,7 +23,7 @@ headers:{
     return json;
 }
 
-const urlDate='http://localhost/db/getDate.php';
+const urlDate='http://app.mmevents.pl/db/getDate.php';
 const getDate=async(url,data)=>{
 
 const resp=await fetch(url,{

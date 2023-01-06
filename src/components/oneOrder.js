@@ -6,7 +6,7 @@ import OrderLayout from './OrderLayout';
 import ChangeDurationOrHour from './ChangeDurationOrHour'
 import { start } from 'lightbox2';
 
-const urlLogin='http://localhost/db/updateOrder.php';
+const urlLogin='http://app.mmevents.pl/db/updateOrder.php';
 const enviarData=async(url,data)=>{
 
 const resp=await fetch(url,{
