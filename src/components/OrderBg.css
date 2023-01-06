@@ -60,13 +60,13 @@ display:inline-block;
     cursor: pointer;
 }
 
-.showBgInfo{
 
-}
 .showBgImg{
 
-    width:100%;
-    height:300px;
+    width:90%;
+height:350px;
+margin-left: auto;
+margin-right: auto;
 }
 
 .leftArrowBg{
@@ -95,9 +95,13 @@ float:right;
 {
     width:100%;
     height:100%;
+    object-fit: cover;
    position:relative;
    display: block;
    float:left;
+
+   right:auto;
+   left:auto;
 
 }
 .showBgImg:after {

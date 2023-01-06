@@ -64,8 +64,12 @@ Administrator może przetwarzać dane osobowe Użytkownika podane w formularzu k
  <li>
 UDOSTĘPNIANIE DANYCH OSOBOWYCH
 </li>
-Dane osobowe Użytkownika nie są przekazywane przez Administratora podmiotom trzecim.
- <li>
+Administrator korzysta z usług podmiotów zewnętrznych, którym dane użytkownika mogą zostać przekazane. Wśród nich znajdują się:
+<ol>
+<li>podmioty wykonujące zlecenia marketingowe na rzecz administratora danych, z którymi administrator danych współpracuje( Google, Meta) </li>
+
+</ol>
+Z uwagi na to, że korzystamy z usług innych dostawców tj. Google, Twoje dane osobowe mogą być także przekazywane poza strefę Europejskiego Obszaru Gospodarczego, tj. do: Stany Zjednoczone Ameryki (USA). <li>
 PRAWA UŻYTKOWNIKA
 </li>
 <ol>

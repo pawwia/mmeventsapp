@@ -126,7 +126,7 @@ const goUpFunc=()=>
 <Faq 
 id={1}
  question="Ile trwa jedna sesja?"
-answer="Jedna sesja trwa w zależności od długości animacji ok. 30 sekund do 1 minuty."
+answer="Jedna sesja trwa w zależności od długości animacji ok. 30 sekund do 1,5 minuty."
 />
 
     
@@ -138,12 +138,12 @@ answer="    Po sesji drukujemy tyle zdjęć ile jest osób lub par na zdjęciu. 
 <Faq 
 id={3}
 question="Jak zarezerwować fotobudkę?"
-answer="Napisz do nas lub zarezerwuj korzystając z naszego systemu rezerwacji. Celem potwierdzenia rezerwacji wymagana jest wpłata zadatku. Po wpłacie zadku mamy pewność, że fotolustro jest danego dnia dostępne tylko dla Ciebie."
+answer="Napisz do nas lub zarezerwuj korzystając z naszego systemu rezerwacji. W ciągu 1 dnia roboczego skontaktujemy się z Tobą w celu podpisania umowy."
 />
 <Faq 
 id={4}
 question="Czy dojazd z fotolustrem jest płatny"
-answer="Nasze pakiety opisują ilosć darmowych kilometrów. Po przekroczeniu ilości darmowych kilometrów doliczamy stawkę paliwową także widniejącą na stronie :) "
+answer="Nasze pakiety opisują ilosć darmowych kilometrów. Po przekroczeniu ilości darmowych kilometrów doliczamy stawkę paliwową.  "
 />
 <Faq 
 id={5}
@@ -153,12 +153,12 @@ answer="Potrzebujemy przestrzeń około 2m x 2m "
 <Faq 
 id={6}
 question="Co jest potrzebne na miejscu do fotolustra?"
-answer="Wymagane jest podłączenie do prądu w odległości do 2m od miejsca gdzie ma stanąć fotolsutro. Zwykle także prosimy o stolik na gadżety i jeśli bierzecie to drugi stolik na księgę gości. "
+answer="Dostęp do prądu (230V, 50Hz) oraz  stolik na gadżety, jeśli w pakiecie jest księga gości to dodatkowo mały stolik na nią."
 />
 <Faq 
 id={7}
 question="Czy montaż i demontaż także jest płatny?"
-answer="Nie. Umawiamy się na konkretny przedział czasowy w którym fotolustro jest gotowe i robi zdjęcia. Przed imprezą przyjeżdżamy ok. 40 min wcześniej aby wszystko rozłożyć. Po imprezie będziemy się pakować około 20 min. "
+answer="Nie. Montaż i demontaż zawarty jest w cenie wynajmu fotolustra i następuje przed oraz po czasie wynajmu określonego w umowie. "
 />
 <Faq 
 id={8}
@@ -173,28 +173,28 @@ answer="Tak, w 2 osoby czuwamy nad prawidłową pracą fotolustra, obsługujemy,
 <Faq 
 id={10}
 question="Który pakiet fotolustra powinniśmy wziąć?"
-answer="To wszystko zależy od ilości gości oraz budżetu. W przypadku małych wesel lub raczej obiadów w ramach wesela ( 30-40 osób) polecamy pakiet 2 godziny. Wesela do 90-100 osób powinny wybrać min. 3 godziny. Powyżej 100 osób - min. 4 godziny. Generalnie fotobudka na weselach rzadko kiedy stoi pusta zatem nie powinniście się martwić, że weźmiecie za dużo a przy większej ilości godzin jest lepszy komfort, bo jedni goście robią sobie zdjęcie podczas gdy inni się bawią. Jeżeli czas jest bardzo krótki zwykle jest sytuacja, że wszyscy goście schodzą z parkietu aby zdążyć sobie zrobić zdjęcie."
+answer="Czas wynajmu zależy od okoliczności oraz budżetu. Przy imprezach do 100 osób polecamy pakiet 2/3 godzin, powyżej- pozostałe pakiety. W przypadku wesel zawsze warto wziąć wyższy pakiet na wypadek sytuacji w których goście będą 'odciągnięci' od fotobudki np przez tort weselny czy inne atrakcje :)"
 />
 <Faq 
 id={11}
 question="W jakich godzinach powinno być dostępne fotolustro na imprezie?"
-answer="To zależy od imprezy. Na weselach polecamy start o około 19-20 - start po obiedzie, koniec przed otrzepinami; Na urodzinach i innych imprezach również rekomendujemy start po głównym posiłku. "
+answer="Wszystko zależy od rodzaju imprezy i wybranego pakietu. Najlepszy czas na rozpoczęcie pracy z fotobudką jest po posiłku,a w przypadku wesel po pierwszym tańcu. Najlepszy czas na zakończenie jest przed oczepinami.  "
 />
 <Faq 
 id={12}
-question="Czy obecność asystentów oraz gadżety są dodatkowo płatna?"
-answer="Nie, zarówno asysta w obsłudze, przygotowanie stanowiska jak i gadżety są już wliczone w cenę usługi. "
+question="Czy gadżety są w cenie?"
+answer="Tak, w każdym z naszych pakietów gadżety są w cenie usługi.  "
 />
 <Faq 
 id={13}
-question="Czy jeśli mamy w pakiecie księgę gości to musimy dokupywać akcesoria do niej - kleje, pisaki itp?"
-answer="Jeśli my zapewniamy księgę gości to zapewniamy także wszystkie akcesoria. Na miejscu mamy dla gości tasiemki, pisaki, kleje i inne rzeczy do przyzdobienia swoich życzeń.  Często jednak pary dają nam swoje rzeczy np. indywidualnie zrobione naklejki :) "
+question="Czy zapewniacie akcesoria do księgi gości? "
+answer="Tak, jeśli w pakiecie jest księga gości to zapewniamy pisaki, kleje, tasiemki, naklejki i inne potrzebne akcesoria do wklejania zdjęć i wpisywania życzeń. "
 />
 
 <Faq 
 id={14}
-question="Czy konieczne jest podpisanie umowy na spotkaniu?"
-answer="Umowę podpisujemy zdalnie przez portal Autenti- potwierdzenie poprzez email. Spotkanie nie jest wymagane."
+question="Czy możemy mieć swoją księgę gości?"
+answer="Jak najbardziej natomiast w takim przypadku akcesoria do księgi są we własnym zakresie. "
 />
 <Faq 
 id={15}
@@ -203,10 +203,27 @@ answer="Po rezerwacji terminu macie dostępne na swoim koncie wszystkie narzędz
 />
 <Faq 
 id={16}
-question="Czy można wynająć fotolustro bez obsługi aby zaoszczędzić na kosztach?"
-answer="Nie wynajmujemy już samego fotolustra. Dlaczego? Po pierwsze w przypadku zacięcia lub skończenia się papieru ktoś by musiał umieć go wymieniać. Po drugie w razie zacięcia się oprogramowania - ktoś znów musiałby umieć skonfigurować je ponownie. Z naszego doświadczenia wynika, że jeśli nie ma nikogo przy fotolustrze mało kto robi sobie zdjęcia, a też nie są najlepszej jakości ze względu na to, że nikt nie poprawia tła, nie motywuje gości do szybszej zmiany gadżetów itp :)  "
+question="Czy można wynająć fotolustro bez obsługi?"
+answer="Nie jest to możliwe. W przypadku zaniku prądu, wymiany papieru, awarii czy po prostu złośliwości rzeczy martwych nie będzie na miejscu nikogo kto będzie mógł to naprawić."
 />
+<Faq
+id={17}
+question="Czy konieczne jest podpisanie umowy na spotkaniu?"
+answer="Umowę podpisujemy zdalnie przez portal Autenti- potwierdzenie poprzez email. Spotkanie nie jest wymagane."
 
+/>
+<Faq
+id={18}
+question="Na jakim obszarze działacie?"
+answer="Działamy na obszarze województwa zachodniopomorskiego oraz lubuskiego. "
+
+/>
+<Faq
+id={19}
+question="Czy dostaniemy dostęp do zdjęć z fotolustra?"
+answer="Tak, w ciagu kilku dni po imprezie udostępniamy galerię zdjęć online z której będzie można pobrać zdjęcia. Zdjęcia do pobrania będą przez 1 miesiąc od daty udostępnienia.  "
+
+/>
     </div>
 
 </div>

@@ -66,13 +66,13 @@ Fotolustro to nowoczesna forma znanej dotychczas wszystkim fotobudki. Różni si
 <AnimationOnScroll animateIn="animate__tada"><h3 style={{textAlign:"left"}}>Wydruki</h3></AnimationOnScroll>
 
 <p>
-Nasze fotolustro daje Wam możliwość wyboru formatu zdjęcia- paski 5x15cm oraz pocztówki 10x15cm. Nie musicie decydować sie na jeden format przez całą imprezę - przed wykonaniem zdjęcia sami wybieracie który format wydruku chcecie. Dzięki profesjonalnym sprzętom jakie posiada nasza fotobudka jakość zdjęć oraz wydruków jest wręcz idealna! W każdym z naszych pakietów ilość wydruków jest nielimitowana więc nikt nie zostanie bez wydruku. Posiadamy duży wybór szablonów wydruków a także możemy wykonać personalizowane projekty z Waszym logiem lub pomysłem bez dodatkowych opłat :) Po każdej imprezie otrzymacie od nas galerię online wykonanych zdjęć, które będziecie mogli pobrać w wersji cyfrowej. 
+Nasze <b>fotolustro</b> daje Wam możliwość wyboru formatu zdjęcia- paski 5x15cm oraz pocztówki 10x15cm. Nie musicie decydować sie na jeden format przez całą imprezę - przed wykonaniem zdjęcia sami wybieracie który format wydruku chcecie. Dzięki profesjonalnym sprzętom jakie posiada nasza fotobudka jakość zdjęć oraz wydruków jest wręcz idealna! W każdym z naszych pakietów ilość wydruków jest nielimitowana więc nikt nie zostanie bez wydruku. Posiadamy duży wybór szablonów wydruków a także możemy wykonać personalizowane projekty z Waszym logiem lub pomysłem bez dodatkowych opłat :) Po każdej imprezie otrzymacie od nas galerię online wykonanych zdjęć, które będziecie mogli pobrać w wersji cyfrowej. 
 
 </p>
 <AnimationOnScroll animateIn="animate__tada"><h3 id="gadzety" style={{textAlign:"left"}}>Gadżety</h3></AnimationOnScroll>
 <p>
     
-Każdy pakiet zawiera unikalne gadżety imprezowe, które jeszcze bardziej uatrakcyjniom Wasze zdjęcia. Przebierajcie się w kapelusze, okulary i inne szalone akcesoria. Jesli planujecie imprezę tematyczną to jesteśmy w stanie zapewnić Wam gadżety w tematyce imprezy.  
+Każdy pakiet zawiera unikalne gadżety imprezowe, które jeszcze bardziej uatrakcyjniom Wasze zdjęcia. Przebierajcie się w kapelusze, okulary i inne szalone akcesoria. Jeśli planujecie imprezę tematyczną to jesteśmy w stanie zapewnić Wam gadżety w tematyce imprezy.  
 </p>
 </div>
 
@@ -88,7 +88,7 @@ Każdy pakiet zawiera unikalne gadżety imprezowe, które jeszcze bardziej uatra
 <div className='textfotolustro' id="animacje">
 <AnimationOnScroll  animateIn="animate__tada"><h3 style={{textAlign:"left"}}>Animacje</h3></AnimationOnScroll>
 <p>
-W odróżnieniu od fotobudki nasze fotolustro wyświetla tematyczne, dźwiękowe animacje, które dostosują się do każdego typu imprezy. Przeprowadzą one Was przez całą sesję robienia zdjęć dzięki czemu lustro jest praktycznie bezobsługowe. Nasze fotolustro posiada dwie animacje weselne, dwie imprezowe które świetnie sprawdzą się np. na urodzinach, uniwersalną, świąteczną oraz halloweenową. Znajdziecie też u nas animacje w jęyku angielskim.   
+W odróżnieniu od fotobudki nasze fotolustro wyświetla tematyczne, dźwiękowe animacje, które dostosują się do każdego typu imprezy. Przeprowadzą one Was przez całą sesję robienia zdjęć dzięki czemu lustro jest praktycznie bezobsługowe. Nasze fotolustro posiada aż 8 animacji:  dwie animacje weselne, dwie imprezowe które świetnie sprawdzą się np. na urodzinach, uniwersalną, dziecięcą, świąteczną oraz halloweenową. Znajdziecie też u nas animacje w języku angielskim.   
 
 </p>
 

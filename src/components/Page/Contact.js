@@ -84,7 +84,7 @@ else setErrorMsg("Nie można było wysłać wiadomości. Napisz do nas pod adres
 <div className='contactForm'>
 <div className='mainForm'>
 <p>Całość rezerwacji możesz przeprowadzić na stronie klikając w razerwacje i wybierając odpowiedni pakiet lub sprawdzając uprzednio wolny termin.
-Jeśli miałbyś do nas jakieś pytania, wątpiwości, problemy jesteśmy zawsze do twojej dyspozycji.</p>
+Jeśli miałbyś do nas jakieś pytania, wątpiwości, problemy jesteśmy zawsze do Twojej dyspozycji.</p>
 <h3 > Formularz kontaktowy</h3>
 <input type="email" className='giveEmail' value={respEmail} onChange={(e)=>{setRespEmail(e.target.value)}} placeholder='Adres Email'/>
 <textarea className='giveEmail' rows="10" value={message} onChange={(e)=>{setMessage(e.target.value)}} placeholder='Treść wiadomości'></textarea>

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './ShowAllLayouts.css';
 import Loader from './Loader';
 
@@ -18,6 +18,9 @@ headers:{
 
 const ShowAllLayouts = (props) => {
 
+    useEffect(()=>
+    {
+        setWait(0)},[])
     const [wait,setWait]=useState(0);
 
     const changeLayoutHandle=()=>
@@ -52,7 +55,7 @@ if(updateLayout(urlLay,data)){
 <img alt='{props.name}' src={require('../images/layouts/5x15/'+props.img)} loading="lazy" unselectable="on"/>
 <img alt='{props.name}' src={require('../images/layouts/10x15/'+props.img)} loading="lazy" unselectable="on"/>
 </div>
-{!wait?<Loader/>:null}
+{wait?<Loader/>:null}
 </div>
 
       );
