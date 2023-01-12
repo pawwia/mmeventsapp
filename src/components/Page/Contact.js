@@ -2,9 +2,12 @@ import React, {useState} from 'react';
 import './Contact.css';
 import Instagram from '../../images/footer/instagram.svg'
 import Facebook from '../../images/footer/facebook.svg'
-import Logo from '../../images/page/magicmomentsevents.svg'
+import Logo from '../../images/page/magicmomentsevents.png'
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import "animate.css/animate.min.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro'
+
 const sendContact=async(url,data)=>{
 
     const resp=await fetch(url,{
@@ -36,7 +39,7 @@ const sendMessage=()=>{
 const topic="Wysłano formularz mmevents.pl"
 const text1="Dzień dobry, potwierdzamy nadanie wiadomości o treści: <br/>"+message+"Odpowiemy na wiadomość w ciągu jednego dnia roboczego.";
 const text2="Nowy formularz ze strony mmevents <br/> E-mail: "+respEmail+"<br/>Treść:"+message;
-const urlContact='http://app.mmevents.pl/db/sendContactForm.php';
+const urlContact='http://localhost/db/sendContactForm.php';
 
 const data={
 topic:topic,
@@ -102,12 +105,12 @@ Wyrażam zgodę na przetwarzanie danych osobowych oraz potwierdzam przeczytanie 
 <img src={Logo} width="300px" alt="Magic Moments Events"/></AnimationOnScroll>
 
 <h3> Fotolustro na Twoją imprezę</h3>
-<a href="tel:+48575046074" >🕾  575 046 074</a>
-<a href="mailto:kontakt@mmevents.pl" >✉  kontakt@mmevents.pl</a>
-<a href="mailto:pawel@mmevents.pl" >✉  pawel@mmevents.pl</a>
-<a href="mailto:ewelina@mmevents.pl" >✉  ewelina@mmevents.pl</a>
-<a href="https://www.facebook.com/mmevents.fotolustro"><img src={Facebook} width="40px" height="40px"/></a>
-<a href="https://www.instagram.com/magicmoments.fotolustro/"><img src={Instagram} width="40px" height="40px" /></a>
+<a href="tel:+48575046074" ><FontAwesomeIcon icon={solid('mobile-screen-button')} size="2x"  />  575 046 074</a>
+<a href="mailto:kontakt@mmevents.pl" > <FontAwesomeIcon icon={solid('envelope')} size="1x"  />  kontakt@mmevents.pl</a>
+<a href="mailto:pawel@mmevents.pl" ><FontAwesomeIcon icon={solid('envelope')} size="1x"  />  pawel@mmevents.pl</a>
+<a href="mailto:ewelina@mmevents.pl" ><FontAwesomeIcon icon={solid('envelope')} size="1x"  /> ewelina@mmevents.pl</a>
+<a href="https://www.facebook.com/mmevents.fotolustro"> <FontAwesomeIcon icon={brands('facebook')} size="2x"  /></a>
+<a href="https://www.instagram.com/magicmoments.fotolustro/"> <FontAwesomeIcon icon={brands('instagram')} size="2x"  /></a>
 
 
 

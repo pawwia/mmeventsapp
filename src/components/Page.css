@@ -58,6 +58,8 @@ font-weight: bold;}
     display: none;
 
 }
+.openMenuPhone
+{display: none;}
 @keyframes fadeInOut {
  0% { opacity:0; }
  50% { opacity:1; } 
@@ -72,7 +74,7 @@ font-weight: bold;}
 .menusBothAdd
 {
 }
-.prices:after {
+.prices:after, .addSrv:after {
     content:'';
     display:block;
     clear:both;
@@ -112,6 +114,23 @@ font-weight: bold;}
 
   }
   
+  .menuForPhone
+  {display:none;}
+
+
+
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
   @media (max-width: 750px) {
     .introductionMirror{
         width:90%;
@@ -155,7 +174,61 @@ border-radius: 8px;
     color:rgb(240, 33, 174)
 }
 .menusBoth
-{width:100%;
+{display: none;
    
+}
+.menuForPhone{
+    display: block;
+position:fixed;
+width:30px;
+height:30px;
+top:30px;
+right:10px;
+background-color: #ff01af;
+border-radius: 10px;
+padding:10px;
+}
+.openMenuPhone{
+    position: fixed;
+    display: block;
+    z-index: 2000;
+    background-color: rgba(0, 0, 0,0.8);
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    animation-duration: 0.8s;
+  animation-name: slidein;
+  overflow-x: hidden;
+  overflow-y: auto;}
+.phoneMenuFirstBar
+{
+    text-align:right;
+    padding:20px;
+
+}
+.phoneCategoryEl{
+    color:#ff01af;
+    font-size:large;
+    width:100%; 
+    min-height:50px;
+    border-bottom: #ff01af solid 1px;
+
+}
+.phoneCategoryEl a {
+width:100%; 
+height:100%;
+text-decoration: none;
+color:#ff01af !important;
+line-height: 50px;
+font-weight: bold;
+padding-left:50px;
+;
+
+}
+.phoneMenuContent ul{
+list-style-type: none !important;
+width:100%;
+padding:0;
 }
   }

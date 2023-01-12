@@ -9,6 +9,9 @@ import $ from 'jquery';
 import "animate.css/animate.min.css";
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import Gallery from './Page/gallery';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro'
+import AditionalService from './Page/AditionalService';
 
 const Page = (props) => {
     useEffect(()=>{
@@ -24,23 +27,37 @@ const goUpFunc=()=>
     window.scrollTo(0, 0);
 
 }
+const menuForPhonesOn=()=>{
+
+    setMenuForPhones(1);
+}
+const menuForPhonesOff=()=>{
+
+  //  $(".openMenuPhone").slideUp(function (){setMenuForPhones(0);})
+  //$(".openMenuPhone").hide("slide",{direction:"right"},1000,function (){setMenuForPhones(0);} )
+  $(".openMenuPhone").animate({
+    'margin-left' : "50%",
+    'opacity' : '0',
+    },500,function (){setMenuForPhones(0);});
+}
+const [menuForPhones,setMenuForPhones]=useState(0)
 
     return ( 
         <div className="Page">
-            <div className='menusBoth' >
+            <nav className='menusBoth' >
 <div className='categoryShop' id="menuMobile">
     <a href='#fotolustro'  id="men1" className='categoryElement'>Fotolustro</a>
     <a href='#wydruki' className='categoryElement'>Wydruki</a>
     <a href='#gadzety' className='categoryElement'>Gadżety</a>
     <a href='#animacje' className='categoryElement'>Animacje</a>
-    <a href='#tla' className='categoryElement'>Tła</a>
     <a href='#cennik' className='categoryElement'>Cennik</a>
     <a href='#opinie' className='categoryElement'>Opinie</a>
+    <a href='#Galeria' className='categoryElement'>Galeria</a>
     <a href='#kontakt'  className='categoryElement'>Kontakt</a>
     <a  href='#faq' className='categoryElement'>FAQ</a>
 
 </div>
-</div>
+</nav>
 <div className='categoryPage' >
 <h1 className="loaded">Magic Moments Events</h1>
 <p className='introductionMirror'>
@@ -92,8 +109,21 @@ const goUpFunc=()=>
 
  />
  </div>
+
  </div>
 <div>.</div>
+<AnimationOnScroll animateIn="animate__tada">
+<h1>Dodatkowe usługi</h1></AnimationOnScroll>
+<div className="addSrv">
+
+<AditionalService
+ guestBook={80}
+ guestBookInd={100}
+ addHour={250}
+ km={1.6}
+
+ />
+</div>
 <div className='categoryPage' id='opinie'>
 
 <Reviews/>
@@ -227,7 +257,28 @@ answer="Tak, w ciagu kilku dni po imprezie udostępniamy galerię zdjęć online
     </div>
 
 </div>
-<div className='goUp' onClick={goUpFunc}>▲</div>
+<div className='goUp' onClick={goUpFunc}><FontAwesomeIcon inverse icon={solid("circle-arrow-up")}/></div>
+<div className='menuForPhone' onClick={menuForPhonesOn}><FontAwesomeIcon icon={solid("bars")} size="2x" inverse/></div>
+{menuForPhones?<nav className="openMenuPhone">
+    <div className="phoneMenuFirstBar">
+        <FontAwesomeIcon onClick={menuForPhonesOff} icon={solid("xmark")} size="2x" inverse />
+        </div>
+        <div className="phoneMenuContent">
+            <ul >
+ <li className='phoneCategoryEl' onClick={menuForPhonesOff}> <a href='#fotolustro'  >Fotolustro</a></li>
+<li className='phoneCategoryEl' onClick={menuForPhonesOff}><a href='#wydruki'>Wydruki</a></li>
+<li className='phoneCategoryEl' onClick={menuForPhonesOff}> <a href='#gadzety' >Gadżety</a></li>
+<li className='phoneCategoryEl' onClick={menuForPhonesOff}><a href='#animacje' >Animacje i tła</a></li>
+<li className='phoneCategoryEl' onClick={menuForPhonesOff}><a href='#cennik' >Cennik</a></li>
+<li className='phoneCategoryEl' onClick={menuForPhonesOff}><a href='#opinie' >Opinie</a></li>
+<li className='phoneCategoryEl' onClick={menuForPhonesOff}><a href='#Galeria' >Galeria zdjęć</a></li>
+<li className='phoneCategoryEl' onClick={menuForPhonesOff}><a href='#kontakt'  >Kontakt</a></li>
+<li className='phoneCategoryEl' onClick={menuForPhonesOff}><a  href='#faq' >FAQ</a></li>
+
+            </ul>
+            </div>
+    
+     </nav>:null}
 </div>
 
      );

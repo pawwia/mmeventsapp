@@ -3,7 +3,7 @@ import MagicMirror from './MagicMirror';
 
 import './Shop.css';
 import ShopProduct from './ShopProduct';
-const urlGetFotolustro='http://app.mmevents.pl/db/getFotolustro.php';
+const urlGetFotolustro='http://localhost/db/getFotolustro.php';
 const getData=async(url,data)=>{
 
 const resp=await fetch(url,{

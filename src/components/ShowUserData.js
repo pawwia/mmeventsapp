@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 
-const urlLogin='http://app.mmevents.pl/db/updateData.php';
+const urlLogin='http://localhost/db/updateData.php';
 const enviarData=async(url,data)=>{
 
 const resp=await fetch(url,{

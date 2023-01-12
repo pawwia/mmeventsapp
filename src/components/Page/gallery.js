@@ -16,31 +16,35 @@ import { LazyLoadImage, trackWindowScroll } from 'react-lazy-load-image-componen
 const Gallery = (scrollPosition) => {
 
     const galleryImages=[
-
-        {img:require('../../images/galleryPage/0 (1).JPG')},
-        {img:require('../../images/galleryPage/0 (2).JPG')},
+        {img:require('../../images/galleryPage/0 (7).JPG')},
         {img:require('../../images/galleryPage/0 (3).JPG')},
         {img:require('../../images/galleryPage/0 (4).JPG')},
-        {img:require('../../images/galleryPage/0 (5).JPG')},
         {img:require('../../images/galleryPage/0 (6).JPG')},
+        {img:require('../../images/galleryPage/0 (5).JPG')},
+        {img:require('../../images/galleryPage/0 (19).JPG')},
+        {img:require('../../images/galleryPage/0 (28).jpg')},
         {img:require('../../images/galleryPage/0 (7).JPG')},
-        {img:require('../../images/galleryPage/0 (8).JPG')},
         {img:require('../../images/galleryPage/0 (9).JPG')},
+
+
+        {img:require('../../images/galleryPage/0 (8).JPG')},
         {img:require('../../images/galleryPage/0 (10).JPG')},
         {img:require('../../images/galleryPage/0 (11).JPG')},
         {img:require('../../images/galleryPage/0 (12).JPG')},
-        {img:require('../../images/galleryPage/0 (13).JPG')},
         {img:require('../../images/galleryPage/0 (14).JPG')},
         {img:require('../../images/galleryPage/0 (15).JPG')},
         {img:require('../../images/galleryPage/0 (16).JPG')},
-        {img:require('../../images/galleryPage/0 (17).JPG')},
+        {img:require('../../images/galleryPage/0 (13).JPG')},
+
         {img:require('../../images/galleryPage/0 (18).JPG')},
-        {img:require('../../images/galleryPage/0 (19).JPG')},
-        {img:require('../../images/galleryPage/0 (20).JPG')},
         {img:require('../../images/galleryPage/0 (21).JPG')},
         {img:require('../../images/galleryPage/0 (22).JPG')},
-        {img:require('../../images/galleryPage/0 (23).JPG')},
+        {img:require('../../images/galleryPage/0 (1).JPG')},
+
         {img:require('../../images/galleryPage/0 (24).JPG')},
+        {img:require('../../images/galleryPage/0 (25).jpg')},
+        {img:require('../../images/galleryPage/0 (26).jpg')},
+        {img:require('../../images/galleryPage/0 (27).jpg')},
 
         ]
 
@@ -68,7 +72,7 @@ slideNumber+1===galleryImages.length?setSlideNumber(0):setSlideNumber(slideNumbe
         }
     
     return ( 
-        <div>
+        <div id='Galeria'>
 
             {openModal&&
             <div className='sliderWrap'>
@@ -97,7 +101,7 @@ className= {(index%1===0)?" single dwa":" single jeden"}
 >
 {/*<img src={slide.img} alt='' loading="lazy"/>*/}
 
-<LazyLoadImage  
+<LazyLoadImage  responisve
            
             src={slide.img} />
 

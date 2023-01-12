@@ -43,11 +43,11 @@ setOneOrderState(!oneOrderState);
     return (
 
       <div className='anOrder'>
-<div className='statusOfOrder'>{statusDec}</div>
-<div className='dateOfOrder'>Dnia {event_date} </div>
-<div className='hourOfOrder'>od godziniy {start_hour} </div>
-<div className='durationOfOrder'>przez {duration} {DurationHour} </div>
-<div className='adressOfOrder'>W {object_name}  </div>
+<div className='statusOfOrder'>Status: {statusDec}</div>
+<div className='dateOfOrder'>Data: {event_date} </div>
+<div className='hourOfOrder'>Od godziniy: {start_hour} </div>
+<div className='durationOfOrder'>Czas trwania:  {duration} {DurationHour} </div>
+<div className='adressOfOrder'>Nazwa obiektu: {object_name}  </div>
 <div className='showOrderDetails' onClick={toggleOneOrderButton}>Pokaż więcej szczegółów  </div>
 {oneOrderState?<OneOrder 
 names={names}

@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './ShowAllLayouts.css';
 import Loader from './Loader';
 
-const urlLay='http://app.mmevents.pl/db/updateLayout.php';
+const urlLay='http://localhost/db/updateLayout.php';
 const updateLayout=async(url,data)=>{
 
 const resp=await fetch(url,{

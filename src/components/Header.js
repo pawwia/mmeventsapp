@@ -4,7 +4,7 @@ import {
   } from "react-router-dom";
   import LoginButton from './LoginButton';
 import './Header.css';
-import Logo from '../images/page/magicmomentsevents.svg'
+import Logo from '../images/page/magicmomentsevents.png'
 const Header = (props) => {
   
     const [loginActive,setLoginActive]=useState(0);
