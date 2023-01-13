@@ -117,6 +117,43 @@ cursor: pointer;
 
             }
 
+            @keyframes color-change {
+              0% { color: red; }
+              50% { color: blue; }
+              100% { color: red; }
+            }
+          .agreeButton{
+          font-weight:bold;
+              animation:color-change 1s infinite;
+          
+          }
+          .CloseOneOrder
+          {
+padding:30px;
+line-height: 40px;
+width:90%;
+margin-left:auto;
+margin-right:auto;
+margin-top:30px;
+margin-bottom: 30px;
+display:block;
+border:none;
+background-color: #ff01af;
+color:white;
+border-radius: 10px;
+font-size:30px;
+
+
+          }
+          .CloseOneOrder:hover{
+            cursor: pointer;
+            background-color: #a80073;
+            color:#fc55c7;
+
+          }
+
+          
+
             @media (max-width: 750px) {
              .popup_open
              { 
@@ -124,5 +161,17 @@ cursor: pointer;
               right: 0;  
               top: 0;  
               bottom: 0;
+             }
+             .orderinfoElement
+             {
+              font-size:medium;
+             }
+             .orderinfoElement span:nth-child(2)
+             {
+              width: 40%;
+             }
+             .orderinfoElement span:nth-child(3)
+             {
+              width: 20%;
              }
             }

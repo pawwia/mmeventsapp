@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 
-const reqURL='http://app.mmevents.pl/db/sendHourChangeRequest.php';
+const reqURL='http://localhost/db/sendHourChangeRequest.php';
 
 
 

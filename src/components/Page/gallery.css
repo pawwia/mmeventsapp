@@ -90,8 +90,10 @@ right:40px;
 
 .fullScreenImage{
 
-    width:calc(100%-40px);
-    height:calc(100%-40px);
+  /*  width:calc(100%-40px);
+    height:calc(100%-40px);*/
+    max-width:100%;
+    max-height:100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -99,9 +101,38 @@ right:40px;
 
 
 }
+.fullScreenImage img
+{
+    max-width:60%;
+    max-height:100%;
+}
     
 .galOnePhtoo
 {
     background-size: cover;
     background-position: center top;
 }
+
+ @media (max-width: 750px) {
+
+.galleryWrap .single{
+width:150px;
+
+}
+.galleryWrap{
+    max-width:100%;
+}
+.fullScreenImage{
+    max-width:100%;
+max-height:100%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+.fullScreenImage img
+{
+    max-width:100%;
+max-height:100%;
+}
+
+ }

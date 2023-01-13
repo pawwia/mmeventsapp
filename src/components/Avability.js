@@ -5,8 +5,8 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 
 
-const urlAvability='http://app.mmevents.pl/db/checkAvability.php';
-const urlCheckCaptcha='http://app.mmevents.pl/db/verifyCaptcha.php';
+const urlAvability='http://localhost/db/checkAvability.php';
+const urlCheckCaptcha='http://localhost/db/verifyCaptcha.php';
 
 const getAvable=async(url,data)=>{
 

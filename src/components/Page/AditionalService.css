@@ -1,0 +1,62 @@
+.AdditionalService
+{
+width:100%;
+min-height:200px;
+}
+
+.AdditionalServiceOne{
+width:20%; 
+height: 300px;
+float:left;
+transition: 0.4;
+margin-right: 6%;
+background-color: rgb(128, 0, 85);
+border-radius:10px;;
+
+
+
+
+}
+.AdditionalServiceOne:last-child{
+    margin-right: 0;
+}
+
+
+.AdditionalServiceOne:hover{
+    background-color: #f13b9d;
+    transition: 0.5ms;
+    cursor: pointer;
+}
+
+.AddServiceOneImg
+{
+ height:50%;
+ align-items: center;
+ display: flex;
+ justify-content: center;
+ padding:15px;
+
+
+}
+
+.AddServiceOneDesc{
+    text-align: center;
+    font-size:larger;
+    width:100%;
+    height:30%;
+    color:#fff;
+   font-weight: 600;
+}
+@media (max-width: 750px) {
+
+    .AdditionalServiceOne{
+width:45%;
+margin:0;
+margin-bottom:15px;
+    }
+.AdditionalServiceOne:nth-child(1), .AdditionalServiceOne:nth-child(3)
+{margin-right: 10%;}
+
+
+}
+    

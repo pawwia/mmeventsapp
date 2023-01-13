@@ -12,6 +12,8 @@ flex-basis: 20%;
 display: block;
 text-align: center;
 vertical-align: middle;
+min-width:200px;
+min-height: 150px;
 
 }
 .logoApp img {

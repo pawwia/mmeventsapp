@@ -12,7 +12,7 @@ import PopUpRules from './popUpRules';
 const d=new Date(); 
 let NextYear=d.getFullYear()+1;
 
-const urlAvability='http://app.mmevents.pl/db/checkAvability.php';
+const urlAvability='http://localhost/db/checkAvability.php';
 const getAvable=async(url,data)=>{
 
 const resp=await fetch(url,{
@@ -26,7 +26,7 @@ headers:{
 }
 
 
-const urlFindByEmail='http://app.mmevents.pl/db/findByEmail.php';
+const urlFindByEmail='http://localhost/db/findByEmail.php';
 const FindByEmail=async(url,data)=>{
 
 const resp=await fetch(url,{
@@ -40,12 +40,12 @@ headers:{
 }
 
 
-const urlRegToUsers='http://app.mmevents.pl/db/regToUsers.php';
-const urlGetIdByEmail='http://app.mmevents.pl/db/getUserId.php';
-const urlRegUserData='http://app.mmevents.pl/db/regToUserData.php';
-const urlGetCities='http://app.mmevents.pl/db/getCities.php';
-const urlGetDate='http://app.mmevents.pl/db/getDate.php';
-const urlAddBooking='http://app.mmevents.pl/db/addBooking.php';
+const urlRegToUsers='http://localhost/db/regToUsers.php';
+const urlGetIdByEmail='http://localhost/db/getUserId.php';
+const urlRegUserData='http://localhost/db/regToUserData.php';
+const urlGetCities='http://localhost/db/getCities.php';
+const urlGetDate='http://localhost/db/getDate.php';
+const urlAddBooking='http://localhost/db/addBooking.php';
 
 const RegToUsers=async(url,data)=>{
 
@@ -60,7 +60,7 @@ headers:{
 }
 
 
-const urlLoginAndGetData='http://app.mmevents.pl/db/LoginAndGetData.php';
+const urlLoginAndGetData='http://localhost/db/LoginAndGetData.php';
 const LoginAndGetData=async(url,data)=>{
 
 const resp=await fetch(url,{
@@ -562,7 +562,7 @@ const handleCaptchaChange=(value)=>{
             captcha:captchaToken,
         }
     
-        const urlCheckCaptcha='http://app.mmevents.pl/db/verifyCaptcha.php';
+        const urlCheckCaptcha='http://localhost/db/verifyCaptcha.php';
 
     
       
@@ -574,7 +574,8 @@ const handleCaptchaChange=(value)=>{
     if(result.success===true)
     { Step1();
         setCaptchaError(null);}
-     else setCaptchaError("Ograniczono dostęp do strony - błąd Captcha")
+     else {setCaptchaError("Ograniczono dostęp do strony - błąd Captcha");recaptchaRef.current.reset();document.location.reload();
+    }
         })  }
         }
         function onChangeCaptcha(value) {

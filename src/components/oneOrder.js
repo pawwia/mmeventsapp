@@ -6,7 +6,7 @@ import OrderLayout from './OrderLayout';
 import ChangeDurationOrHour from './ChangeDurationOrHour'
 import { start } from 'lightbox2';
 
-const urlLogin='http://app.mmevents.pl/db/updateOrder.php';
+const urlLogin='http://localhost/db/updateOrder.php';
 const enviarData=async(url,data)=>{
 
 const resp=await fetch(url,{
@@ -111,7 +111,7 @@ const closeAskForChange=()=>{
               <div className='orderinfoElement'>
                   <span>Nazwa miejsca</span>
                   <span>{changeHotelName?<input type="text" value={changedHotelName} onChange={e=>setChangedHotelName(e.target.value)}/>:changedHotelName}</span>
-                  <span>{changeHotelName?<button onClick={handleChangeHotelName}>Zatwierdź</button>:<button onClick={setChangeHotelName} >Edytuj</button> }</span>
+                  <span>{changeHotelName?<button className="agreeButton" onClick={handleChangeHotelName}>Zatwierdź</button>:<button onClick={setChangeHotelName} >Edytuj</button> }</span>
               </div>
               <div className='orderinfoElement'>
                   <span>Adres</span>
@@ -169,7 +169,7 @@ const closeAskForChange=()=>{
               <div className='orderinfoElement'>
                   <span>Imię/ imiona na wydruku</span>
                   <span>{changeNames?<input type="text" value={changedNames} onChange={e=>setChangedNames(e.target.value)}/>:changedNames}</span>
-                  <span>{changeNames?<button onClick={handleChangeNames}>Zatwierdź</button>:<button onClick={setChangeNames} >Edytuj</button> }</span>
+                  <span>{changeNames?<button className="agreeButton" onClick={handleChangeNames}>Zatwierdź</button>:<button  onClick={setChangeNames} >Edytuj</button> }</span>
              
               </div>
               <div className='orderinfoElement'>
@@ -185,7 +185,7 @@ const closeAskForChange=()=>{
               {guestbook?<div className='orderinfoElement'>
                   <span>typ księgi/ napis </span>
                   <span>{guestbook_type} </span>
-                  <span>{difference<2?"Minął czas zmiany.":"Edytuj"}</span>
+                  <span>{difference<2?"Minął czas zmiany.":null}</span>
               </div>:null}
               <div className='TitleorderInfo'>Dodatkowe informacje?</div>
               <div className='orderinfoElement'>
@@ -199,7 +199,12 @@ const closeAskForChange=()=>{
                   <span></span>
               </div>
           </div>
-          
+          <p>Możesz w systemie zmieniać tła, animację oraz szablony wydruków do 2 dni przed wydarzeniem. Prosimy jednak o poinformowanie nas jeżeli chcesz coś zmienić na mniej niż tydzień przed wydarzeniem ponieważ zmiany mogą zostać przeoczone.
+        
+          </p>
+          <p>Księgi gości ustalane są indywidualnie za pośrednictwem E-mail.</p>
+          <p> W razie pytań lub wątpliwości zadzwoń lub napisz! </p>
+         <button className='CloseOneOrder' onClick={props.close}>Zatwierdź i zamknij</button>
 
           </div>
         </div>  

@@ -1,23 +1,16 @@
 import React from 'react';
 import './Footer.css'
 import { Link } from 'react-router-dom';
-import Instagram from '../images/footer/instagram.svg'
-import Facebook from '../images/footer/facebook.svg'
-import Email from '../images/footer/email.svg'
-import Telephone from '../images/footer/telephone.svg'
-import Location from '../images/footer/location.svg'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro'
+
 
 const Footer = () => {
     return ( 
 <footer>
 <div className='footerContent'>
-{/*<div className='firstLineFooter'>
-    <div className='firstLineElement'><span className='leftFirstLine'><img src={Location} alt='icon'/></span><span className='rightFirstLine'><p>Zachodnio- pomorskie<br/>Lubuskie</p></span></div>
-    <div className='firstLineElement'><span className='leftFirstLine'><img src={Telephone} alt='icon'/></span><span className='rightFirstLine'><p>Tel: 575 046 074</p></span></div>
-    <div className='firstLineElement'><span className='leftFirstLine'><img src={Email} alt='icon'/></span><span className='rightFirstLine'><p>E-mail: kontakt@mmevents.pl</p></span></div>
-    <div className='firstLineElement'><span className="lastChildFirstLine"><img src={Facebook} alt='fb'/><img src={Instagram} alt='insta'/> <img src={Instagram} alt='insta'/> </span></div>
-</div>
-    */}
+
 <div className='newFooter'>
   <div className=" footerelement">
   <h3 style={{color:'#fff'}}>Magic Moments Events</h3>
@@ -28,7 +21,8 @@ const Footer = () => {
   <h3 style={{color:'#fff'}}>Zaobserwuj nas</h3>
   <div>
     <a href="https://www.facebook.com/mmevents.fotolustro">
-  <img src={Facebook} alt="Facebook" width="35px"/>
+  {/*<img src={Facebook} alt="Facebook" width="35px"/>*/}
+  <FontAwesomeIcon icon={brands('facebook')} size="2x"  />
   </a>
   <a href="https://www.facebook.com/mmevents.fotolustro">
     Facebook
@@ -36,7 +30,8 @@ const Footer = () => {
   </div>
   <div>
     <a href="https://www.instagram.com/magicmoments.fotolustro/">
-    <img src={Instagram} alt="Instagram" width="35px"/>
+    {/*<img src={Instagram} alt="Instagram" width="35px"/>*/}
+    <FontAwesomeIcon icon={brands('instagram')} size="2x"  />
   </a>
     <a href="https://www.instagram.com/magicmoments.fotolustro/">
       Instagram
