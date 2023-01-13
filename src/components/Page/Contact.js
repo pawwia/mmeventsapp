@@ -6,7 +6,8 @@ import Logo from '../../images/page/magicmomentsevents.png'
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import "animate.css/animate.min.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro'
+import {   faMobileScreenButton, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faInstagram, faFacebook} from '@fortawesome/free-brands-svg-icons'
 
 const sendContact=async(url,data)=>{
 
@@ -105,12 +106,12 @@ Wyrażam zgodę na przetwarzanie danych osobowych oraz potwierdzam przeczytanie 
 <img src={Logo} width="300px" alt="Magic Moments Events"/></AnimationOnScroll>
 
 <h3> Fotolustro na Twoją imprezę</h3>
-<a href="tel:+48575046074" ><FontAwesomeIcon icon={solid('mobile-screen-button')} size="2x"  />  575 046 074</a>
-<a href="mailto:kontakt@mmevents.pl" > <FontAwesomeIcon icon={solid('envelope')} size="1x"  />  kontakt@mmevents.pl</a>
-<a href="mailto:pawel@mmevents.pl" ><FontAwesomeIcon icon={solid('envelope')} size="1x"  />  pawel@mmevents.pl</a>
-<a href="mailto:ewelina@mmevents.pl" ><FontAwesomeIcon icon={solid('envelope')} size="1x"  /> ewelina@mmevents.pl</a>
-<a href="https://www.facebook.com/mmevents.fotolustro"> <FontAwesomeIcon icon={brands('facebook')} size="2x"  /></a>
-<a href="https://www.instagram.com/magicmoments.fotolustro/"> <FontAwesomeIcon icon={brands('instagram')} size="2x"  /></a>
+<a href="tel:+48575046074" ><FontAwesomeIcon icon={faMobileScreenButton} size="2x"  />  575 046 074</a>
+<a href="mailto:kontakt@mmevents.pl" > <FontAwesomeIcon icon={faEnvelope} size="1x"  />  kontakt@mmevents.pl</a>
+<a href="mailto:pawel@mmevents.pl" ><FontAwesomeIcon icon={faEnvelope} size="1x"  />  pawel@mmevents.pl</a>
+<a href="mailto:ewelina@mmevents.pl" ><FontAwesomeIcon icon={faEnvelope} size="1x"  /> ewelina@mmevents.pl</a>
+<a href="https://www.facebook.com/mmevents.fotolustro"> <FontAwesomeIcon icon={faFacebook} size="2x"  /></a>
+<a href="https://www.instagram.com/magicmoments.fotolustro/"> <FontAwesomeIcon icon={faInstagram} size="2x"  /></a>
 
 
 

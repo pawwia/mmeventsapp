@@ -3,7 +3,7 @@ import './Footer.css'
 import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro'
+import {  faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 
 const Footer = () => {
@@ -22,7 +22,7 @@ const Footer = () => {
   <div>
     <a href="https://www.facebook.com/mmevents.fotolustro">
   {/*<img src={Facebook} alt="Facebook" width="35px"/>*/}
-  <FontAwesomeIcon icon={brands('facebook')} size="2x"  />
+  <FontAwesomeIcon icon={faFacebook} size="2x"  />
   </a>
   <a href="https://www.facebook.com/mmevents.fotolustro">
     Facebook
@@ -31,7 +31,7 @@ const Footer = () => {
   <div>
     <a href="https://www.instagram.com/magicmoments.fotolustro/">
     {/*<img src={Instagram} alt="Instagram" width="35px"/>*/}
-    <FontAwesomeIcon icon={brands('instagram')} size="2x"  />
+    <FontAwesomeIcon icon={faInstagram} size="2x"  />
   </a>
     <a href="https://www.instagram.com/magicmoments.fotolustro/">
       Instagram

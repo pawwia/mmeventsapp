@@ -10,7 +10,8 @@ import "animate.css/animate.min.css";
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import Gallery from './Page/gallery';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro'
+import {  faCircleArrowUp, faXmark, faBars } from '@fortawesome/free-solid-svg-icons'
+
 import AditionalService from './Page/AditionalService';
 
 const Page = (props) => {
@@ -257,11 +258,11 @@ answer="Tak, w ciagu kilku dni po imprezie udostępniamy galerię zdjęć online
     </div>
 
 </div>
-<div className='goUp' onClick={goUpFunc}><FontAwesomeIcon inverse icon={solid("circle-arrow-up")}/></div>
-<div className='menuForPhone' onClick={menuForPhonesOn}><FontAwesomeIcon icon={solid("bars")} size="2x" inverse/></div>
+<div className='goUp' onClick={goUpFunc}><FontAwesomeIcon inverse icon={faCircleArrowUp}/></div>
+<div className='menuForPhone' onClick={menuForPhonesOn}><FontAwesomeIcon icon={faBars} size="2x" inverse/></div>
 {menuForPhones?<nav className="openMenuPhone">
     <div className="phoneMenuFirstBar">
-        <FontAwesomeIcon onClick={menuForPhonesOff} icon={solid("xmark")} size="2x" inverse />
+        <FontAwesomeIcon onClick={menuForPhonesOff} icon={faXmark} size="2x" inverse />
         </div>
         <div className="phoneMenuContent">
             <ul >
