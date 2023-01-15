@@ -7,7 +7,6 @@ import Privacy from './footer/Privacy';
 import Gallery from './Page/gallery';
 import CookieConsent from "react-cookie-consent";
 import CloseSession from './closeSession';
-import { Search } from 'react-router-dom';
 const checkTokenRequest=async(url,data)=>{
 
 const resp=await fetch(url,{
