@@ -27,7 +27,6 @@ const Reviews = () => {
 
             allreviews.then( function(result) {
 setReviews(result)
-console.log(result);
 
             })
 
@@ -73,10 +72,10 @@ console.log(result);
     {reviews?
     <div>
 
-<Carousel responsive={responsive}>
+<Carousel  responsive={responsive}>
 
 {reviews.map((oneRev)=>
-<div className='reviewName'>
+<div className='reviewName' >
 
 <div className='reviewText'>{oneRev.review}</div>
 <div className='reviewText'> opinia od {oneRev.name}</div>

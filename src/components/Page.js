@@ -17,9 +17,8 @@ import AditionalService from './Page/AditionalService';
 const Page = (props) => {
     useEffect(()=>{
         props.cpt(props.title);
-        },[])
+        },)
     
-const [startFaqAnimation,setStartFaqAnimation]=useState(false);
 const ref = useRef(null);
 
 
@@ -151,7 +150,7 @@ const [menuForPhones,setMenuForPhones]=useState(0)
 <AnimationOnScroll animateIn="animate__tada">
  <h1 >Najczęściej zadawane pytania</h1></AnimationOnScroll>
 
-    <div class="questiondiv">
+    <div className="questiondiv">
 
 
 <Faq 

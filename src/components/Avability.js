@@ -137,9 +137,9 @@ function onChange(value) {
     <div>Ten termin jest wolny. Przejdź do rezerwacji terminu tutaj. <Link to={'/products/fotolustro'}>Kliknij tutaj</Link> </div>
     
 :<form>
-<div class="user-box">
+<div className="user-box">
 
-    Wybierz datę: <input type="date"  min={Today} max={max} Value={dateToCheck} onChange={(e)=>setDateToCheck(e.target.value)} />
+    Wybierz datę: <input type="date"  min={Today} max={max} value={dateToCheck} onChange={(e)=>setDateToCheck(e.target.value)} />
     </div>
     <ReCAPTCHA
           ref={recaptchaRef}
@@ -150,7 +150,7 @@ function onChange(value) {
 
   {captchaError?<div style={{color:"white"}}>{captchaError}</div>:null}
 
-    <a  className="checkAvbButton" onClick={ handleSubmit}>
+    <a  href="#/" className="checkAvbButton" onClick={ handleSubmit}>
       <span></span>
       <span></span>
       <span></span>

@@ -1,7 +1,6 @@
 import React from 'react';
 import './Pricing.css';
-import check from '../../images/page/check.png';
-import del from '../../images/page/delete.png';
+
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import "animate.css/animate.min.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

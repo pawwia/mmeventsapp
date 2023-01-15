@@ -8,7 +8,22 @@
     bottom: 0;  
     margin: auto;  
     background-color: transparent;  
+    font-size:22px;
+    font-weight: 900;
+
   }  
+  .popupbooking .Privacy p
+  {
+text-align: left !important;
+  }
+  .popupbooking .Privacy {
+   margin-left:20px;
+  }
+  .popupbooking input, .popupbooking input::placeholder, .popupbooking select, .popupbooking h3 {
+    font-size:20px;
+    font-weight: 900;
+    color:#fff !important;
+  }
   .popupbooking_open {  
     position: absolute;  
     left:5%;  
@@ -23,7 +38,7 @@
 .bookingName{
 text-align: center;
 color:#fff;
-font-size:18px;
+font-size:20px;
 
   }
 
@@ -105,7 +120,7 @@ width:30%;
     top:0;
     left: 0;
     padding: 10px 0;
-    font-size: 16px;
+    font-size: px;
     color: #fff;
     pointer-events: none;
     transition: .5s;
@@ -345,10 +360,12 @@ display:inline-block;
 
 display: inline-block !important;
  }
- .gbopis{
+ .gbopis,.gbopis a{
   font-size:13px !important;
-  color:#e8e8e8
+  color:#e8e8e8;
+  text-decoration: none;
  }
+ 
  .gbtake:hover{
 background-color: #fff;
 cursor:pointer;

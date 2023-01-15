@@ -1,9 +1,6 @@
-import { option } from 'lightbox2';
 import React, {useState,useRef} from 'react';
 import {Link} from 'react-router-dom';
-import { scryRenderedDOMComponentsWithTag } from 'react-dom/test-utils';
 import './PopUpBooking.css';
-import { domToReact } from 'html-react-parser';
 import ReCAPTCHA from "react-google-recaptcha";
 import PopUpRules from './popUpRules';
 
@@ -94,6 +91,7 @@ const [dateToCheck,setDateToCheck]=useState(Today);
 const [stepForm,setStepForm]=useState(1);
 
 const [orderPrice,setOrderPrice]=useState(0);
+// eslint-disable-next-line no-unused-vars
 const [orderDuration,setOrderDuration]=useState(props.hours);
 const [orderKmAdd,setOrderKmAdd]=useState(null);
 const [orderGbAdd,setOrderGbAdd]=useState(null);
@@ -101,7 +99,6 @@ const [finalPrice,setFinalPrice]=useState(null);
 
 
 
-const [orderDate,setOrderDate]=useState(null);
 
 const [email,setEmail]=useState(null);
 const [showEmail,setShowEmail]=useState(1);
@@ -142,12 +139,10 @@ const [partyType,setPartyType]=useState(null);
 
 
 const [orderStartTime,setOrderStartTime]=useState("16:00");
-const [orderGuestBook,setGuestBook]=useState(null);
 const [orderGuestBookType,setOrderGuestBookType]=useState(null);
 const [orderAdress,setOrderAdress]=useState(null);
 const [orderObjectName,setOrderObjectName]=useState(null);
 
-const[isVeryfied, setIsVeryfied]=useState(false)
 const [captchaError,setCaptchaError]=useState(null);
 const recaptchaRef = useRef(null)
 
@@ -161,7 +156,7 @@ const closeRules=()=>{
 function validatepesel(pesel) {
     if (pesel==="18473213212") return true;
     var reg = /^[0-9]{11}$/;
-    if(reg.test(pesel) == false) 
+    if(reg.test(pesel) === false) 
         return false;
     else
     {
@@ -332,12 +327,14 @@ const SubmitPasswordRegisterHandle=()=>{
                 {
                     if (result.error===null)
                     {
-                        setUserId(result.id)
-                       if (result.id)
+                        setUserId(parseJwt(result.token).user_id)
+
+
+                       if (parseJwt(result.token).user_id)
                         {
                                     data={
 
-                                        id:result.id,
+                                        id:parseJwt(result.token).user_id,
                                         name:userName,
                                         surname:userSurName,
                                         adress: userAdress,
@@ -353,8 +350,12 @@ const SubmitPasswordRegisterHandle=()=>{
                                             {
                                                 setLoading(0);
                                                 setErrorText(null);
-                                                props.setIsLogged(result.id);
-                                                window.localStorage.setItem('id', result.id );
+                                               // props.setIsLogged(result.id);
+                                                //window.localStorage.setItem('id', result.id );
+
+                                                sessionStorage.setItem("token", result.token);
+                                                 props.setIsLogged(parseJwt(result.token).user_id);
+                                                props.setLogData(parseJwt(result.token).email);
                                                  setStepForm(4);
 
                                             }
@@ -417,14 +418,22 @@ const SubmitPasswordLoginHandle=()=>{
         resultsLoginAndGetData.then((result)=>{
             if (result.connected===true)
             
-            {   setUserName(result.name);
-                setUserSurName(result.surname);
-                setUserTel(result.tel);
-                setUserPesel(result.pesel);
-                setUserAdress(result.adress)
-                props.setIsLogged(result.id_user);
-                window.localStorage.setItem('id', result.id_user );
-                setUserId(result.id_user)
+            {   //setUserName(result.name);
+               // setUserSurName(result.surname);
+               // setUserTel(result.tel);
+               // setUserPesel(result.pesel);
+               // setUserAdress(result.adress)
+               // props.setIsLogged(result.id_user);
+               // window.localStorage.setItem('id', result.id_user );
+                //setUserId(result.user_id)
+                console.log(parseJwt(result.token).user_id);
+
+                sessionStorage.setItem("token", result.token);
+                props.setIsLogged(parseJwt(result.token).user_id);
+                setUserId(parseJwt(result.token).user_id);
+               props.setLogData(parseJwt(result.token).email);
+
+                
 
 
                 setLoading(0);
@@ -549,10 +558,7 @@ const data={
                                                     setMessage("Nastąpił błąd. Spróbuj ponownie później")
                                             }})}
 }
-const handleCaptchaChange=(value)=>{
-    setIsVeryfied(true);
-    
-    }
+
     const Step1Captcha =async (e)=>{
         e.preventDefault();
         const captchaToken =await recaptchaRef.current.executeAsync();
@@ -623,6 +629,16 @@ const confirmClose=()=>{
    props.close();
 }
 }
+
+function parseJwt (token) {
+    var base64Url = token.split('.')[1];
+    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+
+    return JSON.parse(jsonPayload);
+}
     return (  
 <div className='popupbooking' >  
 
@@ -642,9 +658,9 @@ const confirmClose=()=>{
     <div className='avability login-box'>
     <h1> Na początku wybierz datę imprezy :)  </h1>
    <form>
-<div class="user-box">
+<div className="user-box">
 
-    Wybierz datę: <input type="date"  min={Today} max={max} Value={dateToCheck} onChange={(e)=>setDateToCheck(e.target.value)} />
+    Wybierz datę: <input type="date"  min={Today} max={max} value={dateToCheck} onChange={(e)=>setDateToCheck(e.target.value)} />
     {loading?<div className='LoadingRes'> Trwa pobieranie danych. Proszę czekać... </div>:null}
     </div>
     
@@ -726,7 +742,7 @@ getDataofLoggedUser()
 <span>{valTel?<p className='validationOk'>ok </p>:<p className='ValidationNotOk'>Uzupełnij</p>}</span>
  </div>
  <div className='reginput'>
-    <input className="checkregulamin" type="checkbox" value={valRegulamin} onChange={(e)=>setValRegulamin(e.target.checked)} /> *Oświadczam, że zapoznałem/zapoznałam się z <a onClick={()=>setPopUpRulesOption(2)}>regulaminem serwisu</a> oraz <a onClick={()=>setPopUpRulesOption(1)}>informacjami na temat przetrwarzania danych osobowych</a>
+    <input className="checkregulamin" type="checkbox" value={valRegulamin} onChange={(e)=>setValRegulamin(e.target.checked)} /> *Oświadczam, że zapoznałem/zapoznałam się z <a  href="#/" onClick={()=>setPopUpRulesOption(2)}>regulaminem serwisu</a> oraz <a href="#/" onClick={()=>setPopUpRulesOption(1)}>informacjami na temat przetrwarzania danych osobowych</a>
  </div>
  {loading?<div className='LoadingRes'> Trwa zapisywanie danych. Proszę czekać... </div>:null}
 
@@ -881,7 +897,7 @@ Złożenie rezerwacji na stronie nie jest jednoznaczne z zawarciem umowy. W cią
 Dzięki systemowi rezerwacji spersonalizujesz usługę pod swoje preferencje.  Po zarezerwowaniu przejdź do konta aby wybrać tło, animacje oraz szablony wydruków.
 </p>
     <p className="gbopis">Cena może ulec zmianie po przeliczeniu odległości. Stawka kilometrowa poza pakietem wynosi {props.morekm} zł. System wylicza odległość w zależności od odległości najbliższego podanego miasta.</p>
-    <p className="gbopis">Klikając rezerwuję oświadczam, że zapoznałem/ zapoznałam się z <a onClick={()=>setPopUpRulesOption(2)}>regulaminem serwisu</a> oraz <a onClick={()=>setPopUpRulesOption(1)}>informacjami na temat przetrwarzania danych osobowych</a> </p>
+    <p className="gbopis">Klikając rezerwuję oświadczam, że zapoznałem/ zapoznałam się z <a  href="#/" onClick={()=>setPopUpRulesOption(2)}>regulaminem serwisu</a> oraz <a href="#/" onClick={()=>setPopUpRulesOption(1)}>informacjami na temat przetrwarzania danych osobowych</a> </p>
     
 {loading?"Proszę czekać. Trwa wysyłanie danych":null}
 <button className='inputbookingbutton' onClick={()=>setStepForm(4)} >Zmień dane rezerwacji</button>

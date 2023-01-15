@@ -38,6 +38,16 @@ const togglePopupRemindPassword=()=>{
     setPopupRemindPassword(!popupRemindPassword)
 }
 
+function parseJwt (token) {
+    var base64Url = token.split('.')[1];
+    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+
+    return JSON.parse(jsonPayload);
+}
+
 const handleLogin=async()=>{
 
     setWaiter(true);
@@ -54,9 +64,12 @@ console.log("respuesta: ", respuestajson);
 setError(respuestajson.error);
 setWaiter(false);
 if (respuestajson.connected){
-props.logData(respuestajson);
-props.logged(respuestajson.id);
-window.localStorage.setItem('id', respuestajson.id );
+//props.logData(respuestajson);
+//props.logged(respuestajson.id);
+//window.localStorage.setItem('id', respuestajson.id );
+sessionStorage.setItem("token", respuestajson.token);
+ props.logged(parseJwt(respuestajson.token).user_id);
+props.logData(parseJwt(respuestajson.token).email);
 
 props.close();
 }
@@ -74,9 +87,10 @@ props.close();
 
 <input type="text" className='loginInput' value={login} onChange={(e)=>{setLogin(e.target.value)}} placeholder="Login"/>
 <input type="password" className='loginInput' placeholder='Hasło' onChange={(e)=>{setPassword(e.target.value)}} value={password}/>
-{error?<div class="error">{error}</div>:null}
+{error?<div className="error">{error}</div>:null}
+{waiter?<div className="error">Proszę czekać. Ładowanie... </div>:null}
 <button className='loginInput loginButton' onClick={handleLogin}>Zaloguj</button>
-<div className='remindPassword'><a onClick={togglePopupRemindPassword}>Nie pamiętasz Hasła? Kliknij tutaj aby je przypomnieć</a></div>
+<div className='remindPassword'><a href="#/" onClick={togglePopupRemindPassword}>Nie pamiętasz Hasła? Kliknij tutaj aby je przypomnieć</a></div>
 {popupRemindPassword?<RecoverPassword close={togglePopupRemindPassword}/>:null}
 
 

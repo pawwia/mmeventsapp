@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import './Contact.css';
-import Instagram from '../../images/footer/instagram.svg'
-import Facebook from '../../images/footer/facebook.svg'
+
 import Logo from '../../images/page/magicmomentsevents.png'
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import "animate.css/animate.min.css";

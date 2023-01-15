@@ -1,6 +1,5 @@
 import React, {useState,useEffect} from 'react';
 import ShowOrder from './ShowOrder';
-import { Link } from 'react-router-dom';
 import './MyAccount.css'
 import ShowUserData from './ShowUserData';
 
@@ -16,10 +15,7 @@ headers:{
 }  
 
     });
- 
-
-
-    const json = await resp.json();
+ const json = await resp.json();
     return json;
 }
 
@@ -52,7 +48,7 @@ const [orders,setOrders]=useState(null);
 
 useEffect(()=>{
     props.cpt(props.title);
-    },[])
+    },)
      
 useEffect(()=>{
 
@@ -100,21 +96,27 @@ setUserData(result);
     }
 
 
-console.log("Orders:");
 
-console.log(orders);
 
 const Logout=()=>{
     setOrders(null);
-    localStorage.removeItem('id');
+const data={
+    id:props.isLogged,
+}
 
+if (enviarData("http://localhost/db/cleartoken.php", data))
+{
+sessionStorage.removeItem('token');
+props.setLogData(null);
     props.setIsLogged(null);
-
+}
 
 }
 
     return (  
-        props.isLogged?
+       props.isLogged
+      ?
+
         <div className='MyAccountPage'>
             <div className='MyMenu'>
             <div className='MyMenuElement' onClick={()=>setSwitcher(0)}>Moje rezerwacje</div>
@@ -152,7 +154,7 @@ adress={order.adress}
 object_name={order.object_name}
 />
 
-):<div className='errorAcount'>Niestety nie udało się nam załadować danych. Skontaktuj się z administratorem lub spróbuj ponownie później.</div>
+):<div className='errorAcount'>{error?error:null}<br/>Niestety nie udało się nam załadować danych. Skontaktuj się z administratorem lub spróbuj ponownie później.</div>
 
 
 :
@@ -164,7 +166,7 @@ pesel={userData.pesel}
 adress={userData.adress}
 tel={userData.tel}
 id_user={userData.id_user}
-ref={showUserDate}
+//ref={showUserDate}
    />:<div className='errorAcount'>Niestety nie udało się nam załadować danych. Skontaktuj się z administratorem lub spróbuj ponownie później.</div>
 
 
@@ -174,7 +176,7 @@ ref={showUserDate}
 
 </div>
 
-        </div>:<div className='errorAcount'>Zaloguj się i spróbuj ponownie</div>
+        </div>:<div className='errorAcount'>Zaloguj się ponownie</div>
 
     );
 }

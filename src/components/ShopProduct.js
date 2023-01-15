@@ -1,4 +1,4 @@
-import React, {useState } from 'react';
+import React, {useState,} from 'react';
 import './ShopProduct.css';
 import Popup from './Popup';
 import { BackgroundImage } from 'react-image-and-background-image-fade'
@@ -49,6 +49,8 @@ lazyLoad
       km={props.km}
       isLogged={props.isLogged}
  setIsLogged={props.setIsLogged}
+ setLogData={props.setLogData}
+
     />  
     : null  
     }  </>

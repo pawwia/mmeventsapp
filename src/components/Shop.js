@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import MagicMirror from './MagicMirror';
 
 import './Shop.css';
 import ShopProduct from './ShopProduct';
@@ -22,13 +21,11 @@ const Shop = (props) => {
  
   useEffect(()=>{
     props.cpt(props.title);
-    },[])
+    },)
 
 
 
-const [showDescription, setShowDescription]=useState(0);
-const [showConfiguration, setShowConfiguration]=useState(0);
-const [showProducts, setShowProducts]=useState(1);
+
 const [dataFotolustro, setDataFotolustro]=useState(null); 
 
 
@@ -56,7 +53,7 @@ setDataFotolustro(result);
   },[]);
 
     return (
-        <div className='shopApp'>
+        <div  className='shopApp'>
 <p>{props.text}</p>
 
 {
@@ -77,6 +74,7 @@ carpet={false}
 km={element.km}
 isLogged={props.isLogged}
  setIsLogged={props.setIsLogged}
+ setLogData={props.setLogData}
 
 />
 )

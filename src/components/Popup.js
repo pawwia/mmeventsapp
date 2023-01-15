@@ -65,6 +65,8 @@ setShowReservation(!showReservation);
      
         isLogged={props.isLogged}
  setIsLogged={props.setIsLogged}
+ setLogData={props.setLogData}
+
         />:null}
 
         </div>  
