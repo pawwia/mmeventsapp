@@ -25,7 +25,7 @@ const handleAccount=()=>{
     
 
 <Link to="/offer">Fotolustro</Link>
-<Link to="/products/fotolustro">Rezerwacje</Link>
+<Link to="/products/fotolustro">Zarezerwuj</Link>
 <Link to="/avability">Sprawdź termin</Link>
 
 

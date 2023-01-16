@@ -21,3 +21,38 @@
 
 
 }
+.closeOrders{
+    position:fixed;
+    bottom:10%;
+    left:30%;
+    right:30%;
+    height:100px;
+    top:80%;
+    background-color: #ff01af;
+    color:white;
+    font-size:30px;
+    text-align: center!important ;
+    line-height: 100px;
+    border-radius: 10px;
+    transition: 0.5s;
+    font-weight: 900;
+
+}
+.closeOrders:hover{
+    color:#ff01af;
+    background-color: #ffcdef;
+    cursor: pointer;
+}
+
+@media (max-width:760px) {
+    .typeofLayout{
+        width:100%;
+
+
+    }
+    .closeOrders{
+        left:0;
+        right:0;
+    }
+    
+}

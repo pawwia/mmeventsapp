@@ -158,9 +158,9 @@ function parseJwt (token) {
     <Routes>
     <Route path='products/fotolustro' element={<Shop cpt={changePageTitle} title="System rezerwacji fotolustra na imprezy - mmevents.pl" isLogged={isLogged} setIsLogged={setIsLogged} setLogData={setLogData} text={"Fotolustro"}  />}/>
 
-    <Route path='offer' element={<Page cpt={changePageTitle} title="Page" />}/>
+    <Route path='offer' element={<Page cpt={changePageTitle} title="mmevents.pl - Magic Moments Events. Najepsze footlsutro na wynajem - Imprezy - Wesela - Studniówki - imprezy firmowe - i wiele innych - Szczecin - Zachodniopomorskie  - Lubuskie" />}/>
       <Route path='avability' element={<Avability cpt={changePageTitle} title="dostępność terminu"/>}/>
-      <Route path='/' element={<Page cpt={changePageTitle} title="Page"/>}/>
+      <Route path='/' element={<Page cpt={changePageTitle} title="mmevents.pl - Magic Moments Events. Najepsze footlsutro na wynajem - Imprezy - Wesela - Studniówki - imprezy firmowe - i wiele innych - Szczecin - Zachodniopomorskie  - Lubuskie"/>}/>
       <Route path='rules' element={<Rules cpt={changePageTitle} title="Regulamin strony"/>}/>
       <Route path='privacy' element={<Privacy cpt={changePageTitle} title="Polityka prywatności"/>}/>
       <Route path='/MyAccount'  element={<MyAccount cpt={changePageTitle} title="Moje konto" setIsLogged={setIsLogged} isLogged={isLogged} data={logData}  setLogData={setLogData} />}/>

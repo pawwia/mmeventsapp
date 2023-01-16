@@ -1,6 +1,11 @@
 import React, {useEffect,useState} from 'react';
 import './OrderBg.css';
-const urlShowBg='http://localhost/db/showAllBg.php';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    faCircleChevronLeft,
+    faCircleChevronRight,
+} from '@fortawesome/free-solid-svg-icons';const urlShowBg='http://localhost/db/showAllBg.php';
+
 const showAllBg=async(url)=>{
 
 const resp=await fetch(url,{
@@ -78,9 +83,13 @@ else alert("nastąpił błąd. Skontaktuj się z administratorem.")  }
               <div>
                   <div className='showBgImg'>
                   <img className="bgimage" src={require('../images/backgrounds/'+allBg[showNumber-1].img)} />
-                 {showNumber>1? <div className='leftArrowBg' onClick={()=>{setShowNumber(showNumber-1)}}></div>:null}
+                 {showNumber>1? <div className='leftArrowBg' onClick={()=>{setShowNumber(showNumber-1)}}>
+                 <FontAwesomeIcon icon={faCircleChevronLeft}  size="4x" className='btnPrev' />
+                 </div>:null}
 
-                 {showNumber<allBg.length? <div className='rightArrowBg' onClick={()=>{setShowNumber(showNumber+1)}}></div>:null}
+                 {showNumber<allBg.length? <div className='rightArrowBg' onClick={()=>{setShowNumber(showNumber+1)}}>
+                 <FontAwesomeIcon icon={faCircleChevronRight} size="4x" className='btnNext' />
+                 </div>:null}
                   </div>
 
                  <div className='actualUpdate'>

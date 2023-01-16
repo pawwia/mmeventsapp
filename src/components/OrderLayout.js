@@ -74,6 +74,7 @@ img={data.img}
 
 />):null}
       </div>
+      <div onClick={props.close} className="closeOrders">Gotowe</div>
       </div>
         </div> 
     

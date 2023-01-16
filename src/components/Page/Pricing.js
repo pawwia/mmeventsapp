@@ -1,6 +1,6 @@
 import React from 'react';
 import './Pricing.css';
-
+import { Link } from 'react-router-dom';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import "animate.css/animate.min.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -69,6 +69,7 @@ const Pricing = (props) => {
 <p>Ceny dla imprez do 200 osób. </p>
 <p>W przypadku imprez firmowych, studniówek, imprez plenerowych, imprez masowych przygotowujemy indywidualne oferty. Prosimy o złożenie zapytania.  </p>
 
+<Link to="/products/fotolustro"><div className='ReserveNow'>Zarezerwuj </div></Link>
 
         </div>
         

@@ -135,6 +135,19 @@ font-size:20px;
     color:yellow;
     text-align: center;
 }
+.remindPassword a
+{
+  text-decoration: none;
+  font-size:16px;
+  color:#fff;
+
+
+
+}
+.remindPassword a:hover{
+  color:rgb(255, 189, 241);
+  text-decoration: dotted;
+}
 
 @media (max-width: 750px) {
   .LoginWindow{

@@ -16,6 +16,35 @@
 
 
 }
+.PriceOffer a{
+    text-decoration: none !important;
+transition: 0.3s;
+
+}
+.PriceOffer a:hover{
+
+    background-color: #c7c1ff !important;
+    color:white;
+cursor: pointer;
+}
+.ReserveNow:hover
+{
+    background-color: #c7c1ff !important;
+
+
+}
+
+.ReserveNow, .ReserveNow a
+{
+    width:100%;
+    min-height: 60px;
+    background-color: #fff;
+    text-align: center;
+    font-size: 20px;
+    line-height: 60px;
+    border-radius:5px;
+    vertical-align: middle;
+}
 
 .PriceOffer:nth-child(2)
 {

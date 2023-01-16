@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import './PopUpBooking.css';
 import ReCAPTCHA from "react-google-recaptcha";
 import PopUpRules from './popUpRules';
+import RecoverPassword from './RecoverPassword';
 
 
 
@@ -146,7 +147,14 @@ const [orderObjectName,setOrderObjectName]=useState(null);
 const [captchaError,setCaptchaError]=useState(null);
 const recaptchaRef = useRef(null)
 
-const[popUpRulesOption,setPopUpRulesOption]=useState(null)
+const[popUpRulesOption,setPopUpRulesOption]=useState(null);
+
+const [popupRemindPassword, setPopupRemindPassword]=useState(0);
+
+const togglePopupRemindPassword=()=>{
+
+    setPopupRemindPassword(!popupRemindPassword)
+}
 
 const closeRules=()=>{
 
@@ -693,6 +701,8 @@ props.isLogged?
 getDataofLoggedUser()
 :<div>{showEmail?<input type="email" className='inputbooking' placeholder='Adres e-mail' value={email} onChange={(e)=>setEmail(e.target.value)}/>
 :<input className='inputbooking' placeholder={"Podaj Hasło"}  type="password" value={password} onChange={validatePassword}/>}
+<div className='remindPassword'><a href="#/" onClick={togglePopupRemindPassword}>Nie pamiętasz Hasła? Kliknij tutaj aby je przypomnieć</a></div>
+
    {errorText?<div className="ErrorPole">{errorText}</div>:null}
     {loading?<div className='LoadingRes'> Trwa pobieranie danych. Proszę czekać... </div>:null}
 {valNewUser?<div className="ValidationRes">
@@ -781,12 +791,12 @@ getDataofLoggedUser()
     <h3>Miejsce imprezy</h3>
     <div className='reginput'>
     <span>Nazwa obiektu</span>
-    <span><input type="text" placeholder="Hotel Transylwania" onChange={ValidateObjectName}/> </span>
+    <span><input type="text" placeholder="(Wpisz nazwę)" onChange={ValidateObjectName}/> </span>
     <span>{valOrderObjectName?<p className='validationOk'>ok :)</p>:<p className='ValidationNotOk'>Tu popraw :(</p>}</span>
 </div>
 <div className='reginput'>
     <span>Adres obiektu</span>
-    <span><input type="text" placeholder="Imprezowa 12, 71-772 Szczecin" onChange={ValidateObjectAdress}/> </span>
+    <span><input type="text" placeholder="(Wpisz adres)" onChange={ValidateObjectAdress}/> </span>
     <span>{valOrderAdress?<p className='validationOk'>ok :)</p>:<p className='ValidationNotOk'>Tu popraw :(</p>}</span>
 </div>
 
@@ -926,6 +936,7 @@ Dzięki systemowi rezerwacji spersonalizujesz usługę pod swoje preferencje.  P
 {stepForm===19?<div>19</div>:null}
 
 {popUpRulesOption?<PopUpRules option={popUpRulesOption} close={closeRules} title={props.title}/>:null}
+{popupRemindPassword?<RecoverPassword close={togglePopupRemindPassword}/>:null}
 
 </div>
         </div>
