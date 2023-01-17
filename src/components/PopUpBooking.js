@@ -911,7 +911,7 @@ Dzięki systemowi rezerwacji spersonalizujesz usługę pod swoje preferencje.  P
     
 {loading?"Proszę czekać. Trwa wysyłanie danych":null}
 <button className='inputbookingbutton' onClick={()=>setStepForm(4)} >Zmień dane rezerwacji</button>
-    {btnActive&&partyType&&guestNumber?<button className='inputbookingbutton' onClick={Bookthis} >Rezerwuję</button>:<button className='inputbookingbutton'>Czekam</button>}
+    {btnActive&&partyType&&guestNumber?<button className='inputbookingbutton' onClick={Bookthis} >Rezerwuję</button>:<button className='inputbookingbutton'>Uzupełnij </button>}
 </div>
 
 </div>:null}
