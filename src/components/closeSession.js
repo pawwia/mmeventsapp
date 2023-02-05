@@ -95,7 +95,7 @@ const renewToken=()=>{
         
         <div className='closeSession'>
 <div className='closeSessionWindow'>
-<h1> Czy nadal tu jesteś? </h1>
+<h2> Czy nadal tu jesteś? </h2>
 <p> Od jakiegoś czasu nie zarejstrowaliśmy Twojego ruchu na stronie. Twoja sesja może zaraz wygasnąć. Odswież sesję aby kontynuować przeglądanie strony.</p>
 <button onClick={renewToken}>Odśwież sesję</button>
 

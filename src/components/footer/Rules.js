@@ -6,7 +6,7 @@ const Rules = (props) => {
     },[])
     return (
         <div className='Privacy'>
-<h1> Regulamin witryny</h1>
+<h2> Regulamin witryny</h2>
 <p>
 <ol type="i">
 <li> Interpretacja</li>

@@ -35,7 +35,6 @@ const data={
    
 
             getDateUser.then(  function(result) {
-              console.log(dataLayout);
               setDataLayout(result)
 
 })

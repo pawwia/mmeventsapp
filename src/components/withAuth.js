@@ -26,7 +26,6 @@ export default function withAuth(AuthComponent) {
                 try {
                     
                     const confirm = Auth.getConfirm()
-                    console.log("confirmation is:", confirm);
                     this.setState({
                         confirm: confirm,
                         loaded: true
@@ -34,7 +33,6 @@ export default function withAuth(AuthComponent) {
                 }
                 /* Oh snap! Looks like there's an error so we'll print it out and log the user out for security reasons. */
                 catch (err) {
-                    console.log(err);
                     Auth.logout()
                     this.props.history.replace('/login');
                 }
@@ -44,14 +42,12 @@ export default function withAuth(AuthComponent) {
         render() {
             if (this.state.loaded === true) {
                 if (this.state.confirm) {
-                    console.log("confirmed!")
                     return (
                         /* component that is currently being wrapper(App.js) */
                         <AuthComponent history={this.props.history} confirm={this.state.confirm} />
                     )
                 }
                 else {
-                    console.log("not confirmed!")
                     return null
                 }
             }

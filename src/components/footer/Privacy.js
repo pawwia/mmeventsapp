@@ -8,7 +8,7 @@ if (props.cpt&&props.title)props.cpt(props.title);
     return (
         
         <div className='Privacy'>
-<h1> Polityka prywatności</h1>
+<h2> Polityka prywatności</h2>
 <p>
 
 Ochrona prywatności Użytkowników jest dla DownWind Paweł Wiatrak szczególnie ważna. Z tego względu Użytkownicy Serwisu www.mmevents.pl mają zagwarantowane wysokie standardy ochrony prywatności. DownWind Paweł Wiatrak jako administrator danych dba o bezpieczeństwo udostępnionych przez Użytkowników danych.

@@ -434,7 +434,6 @@ const SubmitPasswordLoginHandle=()=>{
                // props.setIsLogged(result.id_user);
                // window.localStorage.setItem('id', result.id_user );
                 //setUserId(result.user_id)
-                console.log(parseJwt(result.token).user_id);
 
                 sessionStorage.setItem("token", result.token);
                 props.setIsLogged(parseJwt(result.token).user_id);
@@ -664,7 +663,7 @@ function parseJwt (token) {
 {stepForm===1?<div>
 
     <div className='avability login-box'>
-    <h1> Na początku wybierz datę imprezy :)  </h1>
+    <h2> Na początku wybierz datę imprezy :)  </h2>
    <form>
 <div className="user-box">
 

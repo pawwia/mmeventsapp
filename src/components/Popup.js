@@ -33,7 +33,7 @@ setShowReservation(!showReservation);
   <div className='whatContain'>Pomoc asystentów</div>
   <div className='whatContain'>Zestaw gadżetów imprezowych</div>
   <div className='whatContain'>Indywidualne szablony zdjęć</div>
-  <div className='whatContain'>Indywidualne indywidualnie wybrane tło</div>
+  <div className='whatContain'>Indywidualnie  wybrane tło</div>
   <div className='whatContain'>Galeria zdjęć z wykonanymi zdjęciami</div>
   {props.carpet?<div className='whatContain'>Czerwony dywan i eleganckie słupki</div>:null}
   {props.guestBook?<div className='whatContain'>Darmowa księga gości</div>:null}

@@ -15,11 +15,9 @@ headers:{
 
     });
  
-    //console.log(resp);
 
 
     const json = await resp.json();
-    //console.log(json);
     return json;
 }
 
@@ -56,9 +54,7 @@ const handleLogin=async()=>{
 
 'password':password
     }
-    //console.log(data);
    const respuestajson= await enviarData(urlLogin,data);
-console.log("respuesta: ", respuestajson);
 
 //props.acceder(respuestajson.conectado)
 setError(respuestajson.error);

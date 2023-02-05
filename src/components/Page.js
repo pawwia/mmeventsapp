@@ -69,7 +69,7 @@ const [menuForPhones,setMenuForPhones]=useState(0)
 
 <div className='categoryPage' id='cennik'>
 <AnimationOnScroll animateIn="animate__tada">
-<h1>Cennik</h1></AnimationOnScroll>
+<h1>Cennik Fotolustro - 2023</h1></AnimationOnScroll>
 
 
 <div className='c'>
@@ -113,7 +113,7 @@ const [menuForPhones,setMenuForPhones]=useState(0)
  </div>
 <div>.</div>
 <AnimationOnScroll animateIn="animate__tada">
-<h1>Dodatkowe usługi</h1></AnimationOnScroll>
+<h2>Dodatkowe usługi</h2></AnimationOnScroll>
 <div className="addSrv">
 
 <AditionalService
@@ -130,7 +130,7 @@ const [menuForPhones,setMenuForPhones]=useState(0)
 </div>
 <div className='categoryPage' id='kontakt'>
 <AnimationOnScroll animateIn="animate__tada">
-<h1>Kontakt i rezerwacja</h1></AnimationOnScroll>
+<h2>Kontakt i rezerwacja</h2></AnimationOnScroll>
 
 
 

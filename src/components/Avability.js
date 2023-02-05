@@ -128,7 +128,7 @@ function onChange(value) {
 
     return (  
 <div className='avability login-box'>
-    <h1> Sprawdź dostępność fotolustra na Twojej imprezie! </h1>
+    <h2> Sprawdź dostępność fotolustra na Twojej imprezie! </h2>
     {showResult?
     showResult.avable?
     <div className='resultAvable'>Niestety tego dnia mamy już jedną potwierdzoną imprezę która rozpoczyna się o godzinie {showResult.start_hour}. Jeśli chciałbyś wynająć fotolustro w innej porze, skontaktuj się z nami bezpośrednio.</div>
