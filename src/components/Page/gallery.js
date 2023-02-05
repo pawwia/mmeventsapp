@@ -1,11 +1,7 @@
 import React, {useState} from 'react';
 import './gallery.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-    faCircleChevronLeft,
-    faCircleChevronRight,
-    faCircleXmark
-} from '@fortawesome/free-solid-svg-icons';
+import { faCircleChevronLeft, faCircleChevronRight, faCircleXmark} from '@fortawesome/free-solid-svg-icons';
 import { LazyLoadImage, trackWindowScroll } from 'react-lazy-load-image-component';
 
 
